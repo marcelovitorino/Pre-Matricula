@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+/* Estilo do Index */
+
+@import url('https://fonts.googleapis.com/css?family=Squada+One');
+
+body {
+    background-color: #F1F1F1;
+    
+}
+
+.container-fluid{
+    padding-top: 10px;
+    background-color: #EDE6E6;
+}
+.container-fluid img{
+    padding-bottom: 10px;
+}
+
+.container-fluid b{
+    color: #004A8F;
+    font-size: 170%;
+    font-family: 'Squada One', cursive;
+}
+
+.form-signin{
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.form-signin img:hover {
+    box-shadow: 1px 1px 29px #004A8F;
+}
