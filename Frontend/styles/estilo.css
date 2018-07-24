@@ -28,6 +28,10 @@ body {
     padding-bottom: 40px;
 }
 
-.form-signin img:hover {
-    box-shadow: 1px 1px 29px #004A8F;
-}
+
+.g-signin2,
+      .g-signin2 .abcRioButton {
+        display: block;
+        margin: 20px auto 0 auto;
+        text-align: center;
+      }
