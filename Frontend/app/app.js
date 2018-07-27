@@ -1,9 +1,9 @@
 'use strict';
-var app = angular.module('preMatricula',['ngRoute']);
+var app = angular.module('app',['ngRoute']);
 
 app.config(['$routeProvider',function($routeProvider) {
-    $routeProvider.when('/home', {
-          templateUrl: 'home.html',
+    $routeProvider.when('/login', {
+          templateUrl: 'login.html',
           controller: 'HomeController',
       })
     
