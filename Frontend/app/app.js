@@ -1,5 +1,5 @@
 
-var app = angular.module('app',['ngRoute','socialLogin']);
+var app = angular.module('app',['ngStorage','ngRoute','socialLogin']);
 
 app.config(function($routeProvider, $locationProvider) {
      // remove o # da url
@@ -7,17 +7,21 @@ app.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
 
-    .when('/', {
+    .when('/home', {
       templateUrl: 'app/views/Home.html',
       controller: 'HomeController'
     })
       .when('/login', {
           templateUrl: 'app/views/Login.html',
-          controller: 'LoginController',
+          controller: 'LoginController'
       })
-    
+      .when('/meusdados', {
+        templateUrl: 'app/views/UserData.html',
+        controller: 'UserDataController',
+        authorize : true
+    })
       .otherwise({
-        redirectTo: '/',
+        redirectTo: '/home'
       });
 
     });

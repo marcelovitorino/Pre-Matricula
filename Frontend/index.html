@@ -7,14 +7,10 @@
 <title>Pré Matricula - Computação</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Cliente ID do Google Sign In -->
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 <link href="styles/estilo.css" rel="stylesheet" type="text/css">
 
-<!-- Biblioteca Google Sign In -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body class = "text-center">
@@ -31,7 +27,7 @@
   
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
-  <li class="nav-item active" ng-class="{active: activetab == '/'}"><a class="nav-link" href="/">Home</a></li>
+  <li class="nav-item active" ng-class="{active: activetab == '/'}"><a class="nav-link" href="/home">Home</a></li>
   <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/login">Login</a></li>
  
         <li class="nav-item">
@@ -70,8 +66,16 @@
 
 <!--Scripts Aplicação -->
 <script src="app/app.js"></script>
+<script src="app/Services/AuthService.js"></script>
+<!--Controllers-->
 <script src="app/controllers/LoginController.js"></script>
 <script src="app/controllers/HomeController.js"></script>
+<script src="app/controllers/UserDataController.js"></script>
+<!--Services-->
+
+
+<!--Plugins-->
 <script src="app/bower_components/angularjs-social-login/angularjs-social-login.js"></script>
+<script src="app/bower_components/ngstorage/ngStorage.min.js"></script>
 </body>
 </html>
