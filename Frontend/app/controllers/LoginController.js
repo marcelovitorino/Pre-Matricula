@@ -1,7 +1,13 @@
 angular.module('app')
-    .controller('LoginController', LoginController($rootScope, $location));
+    .controller('LoginController',  function($rootScope, $location)
+    {
+       $rootScope.activetab = $location.path();
+       $rootScope.profile_image = "/../../images/profile.png";
 
+       $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
+         $rootScope.profile_image = userDetails.imageUrl;  
+       })
 
-function loginController($rootScope, $location) {
-        $rootScope.activetab = $location.path();
-    }
+    
+    });
+
