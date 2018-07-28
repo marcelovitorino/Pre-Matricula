@@ -1,7 +1,6 @@
 package springboot.model;
 
 import java.io.Serializable;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,27 +33,28 @@ public class Disciplina implements Serializable {
 
 	@Column(nullable = false)
 	private int cargaHoraria;
-
+	
 	@Column(nullable = false)
-	private Set<String> professores;
+	private String tipo;
+	
+	@Column(nullable = false)
+	private String ppc;
+
 
 	public Disciplina() {
 
 	}
 
-	public Disciplina(String nome, String codigo, int numVagas, int numCreditos, int cargaHoraria,
-			Set<String> professores) {
+	public Disciplina(String nome, String codigo, int numVagas, int numCreditos, int cargaHoraria, String tipo,
+			String ppc) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
 		this.numVagas = numVagas;
 		this.numCreditos = numCreditos;
 		this.cargaHoraria = cargaHoraria;
-		this.professores = professores;
-	}
-
-	public Long getId() {
-		return id;
+		this.tipo = tipo;
+		this.ppc = ppc;
 	}
 
 	public String getNome() {
@@ -96,19 +96,32 @@ public class Disciplina implements Serializable {
 	public void setCargaHoraria(int cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
 	}
-
-	public Set<String> getProfessores() {
-		return professores;
+	
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setProfessores(Set<String> professores) {
-		this.professores = professores;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getPpc() {
+		return ppc;
+	}
+
+	public void setPpc(String ppc) {
+		this.ppc = ppc;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public Long getId(){
+		return id;
+	}
 
+	//Realmente necessario?
 	public void setId(Long id) {
 		this.id = id;
 	}
