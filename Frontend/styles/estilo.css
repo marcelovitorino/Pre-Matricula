@@ -28,3 +28,14 @@ body {
     font-weight: 500;
 }
 
+.page-header {
+	display : none;
+	text-align : center;
+	background-color: #17a2b8;
+	width:650px;
+	margin-left: 550px;
+	margin-top: 50px;
+	color: #ffffff;	
+	text-shadow: 2px 3px 1px black;
+	font-family: arial;
+}
