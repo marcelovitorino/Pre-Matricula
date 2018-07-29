@@ -19,41 +19,37 @@
 
 <!-- Head -->
 <div class = "container-fluid" id = "head"><img src = "images/logo-test.png"></div>
-<nav class= "navbar navbar-expand-lg navbar-light bg-light">
+   <nav class= "navbar navbar-expand-lg navbar-light bg-light">
  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+   </button> 
   
 <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="HeadController">
   <ul class="navbar-nav mr-auto">
-  <li class="nav-item active" ng-class="{active: activetab == '/'}"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/login">Login</a></li>
-</ul>
+      <li class="nav-item active" ng-class="{active: activetab == '/'}"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+      <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/login">Login</a></li>
+      <li class="nav-item" ng-class="{active: activetab == '/instrucoes'}"><a class="nav-link" href="/instrucoes">Instruções</a></li>
+  </ul>
 <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <img id = 'profile' ng-src="{{profile_image}}" class="rounded-circle img-fluid" alt="Placeholder image" width="40px" height="40px"></a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <div ng-switch = "isLogged">
-         <div ng-switch-when="true">
-         <h6 class="dropdown-header">{{nome_usuario}}</h6>
-         <a class="dropdown-item" href ="#">Meus Dados</a>
-         <div class="dropdown-divider"></div>
-         <a class="dropdown-item" ng-click="logout()" href="#">Logout</a>
-         </div>
-         <div ng-switch-when="false">
-         <a class="dropdown-item" href="#" g-login>Login</a>
-         </div>
-        </div>               
-                   </div>
-                  </div>
-
+         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <div ng-switch = "isLogged">
+              <div ng-switch-when="true">
+                    <h6 class="dropdown-header">{{nome_usuario}}</h6>
+                    <a class="dropdown-item" href ="#">Meus Dados</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" ng-click="logout()" href="#">Logout</a>
+              </div>
+              <div ng-switch-when="false">
+                <a class="dropdown-item" href="#" g-login>Login</a>
+              </div>
+            </div>               
+          </div>
+        </div>
     </div>
   </nav>
-
-
-
-
 <div ng-view></div>
 
     
