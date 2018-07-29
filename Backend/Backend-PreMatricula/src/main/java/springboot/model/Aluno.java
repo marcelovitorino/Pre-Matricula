@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,16 +27,20 @@ public class Aluno implements Serializable {
 	@Column(nullable = false)
 	private String periodoEntrada;
 	
+	@Column(nullable = false)// mantem essa ssinatura?
+	private PreMatricula preMatricula;
+	
 	public Aluno(){
 		
 	}
 	
-	public Aluno(String matricula, String nome,  String email, String periodoEntrada, int idPreMatricula) {
+	public Aluno(String matricula, String nome,  String email, String periodoEntrada) {
 		super();
 		this.matricula = matricula;
 		this.nome = nome;
 		this.email = email;
 		this.periodoEntrada = periodoEntrada;
+		this.preMatricula = new PreMatricula();
 	}
 	
 	public String getMatricula(){
@@ -68,9 +74,27 @@ public class Aluno implements Serializable {
 	public void setPeriodoEntrada(String periodoEntrada){
 		this.periodoEntrada = periodoEntrada;
 	}
+	
+	@OneToOne
+	@JoinColumn(name = "preMatriculaId")
+	public PreMatricula getPreMatricula() {
+		return preMatricula;
+	}
 
+	public void setPreMatricula(PreMatricula preMatricula) {
+		this.preMatricula = preMatricula;
+	}
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		
+		String result = String.format("Nome: %s, email: %s, matricula: %s, periodo de ingresso: %s", nome, email, matricula, periodoEntrada);
+		result += preMatricula.toString();
+		return result;
 	}
 	
 }
