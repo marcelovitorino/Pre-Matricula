@@ -7,21 +7,24 @@ app.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
 
-    .when('/home', {
-      templateUrl: 'app/views/Home.html',
-      controller: 'HomeController'
+    .when('/dashboard', {
+      templateUrl: 'app/views/Dashboard.html',
+      controller: 'DashboardController',
+      requireAuth: true,
+     
     })
       .when('/login', {
           templateUrl: 'app/views/Login.html',
           controller: 'LoginController'
       })
-      .when('/meusdados', {
+      .when('/userData', {
         templateUrl: 'app/views/UserData.html',
         controller: 'UserDataController',
-        authorize : true
+        requireAuth: true,
+      
     })
       .otherwise({
-        redirectTo: '/home'
+        redirectTo: '/dashboard'
       });
 
     });
