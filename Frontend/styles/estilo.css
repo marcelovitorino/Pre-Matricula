@@ -30,6 +30,11 @@ body {
         text-align: center;
       }
 
+
+.nav-item dropdown{
+    padding-right: 400px;
+}
+
 #menu{
     background:  #004A8F;
 }

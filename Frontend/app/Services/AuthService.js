@@ -1,5 +1,5 @@
 angular.module('app')
-  .factory('AuthService', function($localStorage) {
+  .factory('AuthService', function($localStorage,socialLoginService) {
    const service = {};
 
    
@@ -15,8 +15,9 @@ angular.module('app')
     service.signup = function (data) {
       $http.post('api/signup', data);
     },
-    service.logout = function (data) {
-      delete $localStorage.UserDetails;
+    service.logout = function () {
+      socialLoginService.logout();
+      $localStorage.$reset();
     }
 
     service.isLogged = function(){ return $localStorage.UserDetails !== undefined};
