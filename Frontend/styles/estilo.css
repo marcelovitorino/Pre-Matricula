@@ -5,23 +5,17 @@
 @import url('https://fonts.googleapis.com/css?family=Squada+One');
 
 body {
-    background-color: #F1F1F1;
-    
+    background-color: #F1F1F1;  
 }
 
-.container-fluid{
-    padding-top: 10px;
-    background-color: #EDE6E6;
+#head{
+  background: #17a2b8!important;
 }
-.container-fluid img{
-    padding-bottom: 10px;
+#head img{
+    padding-top : 15px;
 }
 
-.container-fluid b{
-    color: #004A8F;
-    font-size: 170%;
-    font-family: 'Squada One', cursive;
-}
+
 
 .form-signin{
     padding-top: 30px;
@@ -35,3 +29,12 @@ body {
         margin: 20px auto 0 auto;
         text-align: center;
       }
+
+
+.nav-item dropdown{
+    padding-right: 400px;
+}
+
+#menu{
+    background:  #004A8F;
+}

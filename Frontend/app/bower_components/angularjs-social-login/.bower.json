@@ -1,0 +1,15 @@
+{
+  "name": "angularjs-social-login",
+  "homepage": "https://github.com/heresy/angularjs-social-login",
+  "version": "2.6.1",
+  "_release": "2.6.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.6.1",
+    "commit": "d3cc3c309baf082a43626878c3a06f6aef47aa0a"
+  },
+  "_source": "https://github.com/heresy/angularjs-social-login.git",
+  "_target": "^2.6.1",
+  "_originalSource": "angularjs-social-login",
+  "_direct": true
+}

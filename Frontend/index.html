@@ -1,49 +1,85 @@
 <!DOCTYPE html>
-<html ng-app="preMatricula">
+<html ng-app="app">
 <head>
+<base href="/index.html">
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Pré Matricula - Computação</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Cliente ID do Google Sign In -->
-<meta name="google-signin-client_id" content="693340193789-7fk7t8v27glfr50c5gqth4f9bdu6jla7.apps.googleusercontent.com">
+
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
 <link href="styles/estilo.css" rel="stylesheet" type="text/css">
 
-<!-- Biblioteca Google Sign In -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body class = "text-center">
-<!-- Angular JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
 
 <!-- Aplicação -->
-    
-<div class="container-fluid"> <b>PRÉ-MATRÍCULA</b> <img src="images/logo-topo2.png" alt = "Computação UFCG" width="300px"> </div>
 
-<form class = 'form-signin'>
-<img id = 'profile' src="images/profile.png" class="rounded-circle img-fluid" alt="Placeholder image" width="200px" height="100px"> 
-<div class="g-signin2" data-onsuccess="onSignIn"></div></form>
-    
+<!-- Head -->
+<div class = "container-fluid" id = "head"><img src = "images/logo-test.png"></div>
+<nav class= "navbar navbar-expand-lg navbar-light bg-light">
+ 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+<div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="HeadController">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item active" ng-class="{active: activetab == '/'}"><a class="nav-link" href="/home">Home</a></li>
+  <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/login">Login</a></li>
+</ul>
+<div class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img id = 'profile' ng-src="{{profile_image}}" class="rounded-circle img-fluid" alt="Placeholder image" width="40px" height="40px"></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <div ng-switch = "isLogged">
+         <div ng-switch-when="true">
+         <h6 class="dropdown-header">{{nome_usuario}}</h6>
+         <a class="dropdown-item" href ="#">Meus Dados</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" ng-click="logout()" href="#">Logout</a>
+         </div>
+         <div ng-switch-when="false">
+         <a class="dropdown-item" href="#" g-login>Login</a>
+         </div>
+        </div>               
+                   </div>
+                  </div>
+
+    </div>
+  </nav>
+
+
+
+
+<div ng-view></div>
 
     
-<script>
-  function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  document.getElementById("profile").src = profile.getImageUrl();      
-}
-</script> 
+
+<!-- Angular JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     
 <!-- Dependências do BootStrap -->   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
-<!--Scripts-->
-<script src="scripts/app.js"></script>
+<!--Scripts Aplicação -->
+<script src="app/app.js"></script>
+<script src="app/Services/AuthService.js"></script>
+<!--Controllers-->
+<script src="app/controllers/HeadController.js"></script>
+<script src="app/controllers/LoginController.js"></script>
+<script src="app/controllers/HomeController.js"></script>
+<script src="app/controllers/UserDataController.js"></script>
+<!--Services-->
+
+
+<!--Plugins-->
+<script src="app/bower_components/angularjs-social-login/angularjs-social-login.js"></script>
+<script src="app/bower_components/ngstorage/ngStorage.min.js"></script>
 </body>
 </html>
