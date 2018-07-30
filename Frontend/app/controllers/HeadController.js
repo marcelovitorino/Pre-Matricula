@@ -1,12 +1,12 @@
 angular.module('app')
-    .controller('HeadController', function($rootScope, $location,AuthService)
+    .controller('HeadController', function($rootScope,$scope, $location,AuthService)
     {
        $rootScope.activetab = $location.path();
 
        if(AuthService.isLogged()){
-        $rootScope.profile_image = AuthService.getUserDetails().imageUrl;
-        $rootScope.nome_usuario = AuthService.getUserDetails().name;
-        $rootScope.isLogged = true;
+        $scope.profile_image = AuthService.getUserDetails().imageUrl;
+        $scope.nome_usuario = AuthService.getUserDetails().name;
+        $scope.isLogged = true;
        
     } else{
         $rootScope.profile_image = "/../../images/profile.png";
