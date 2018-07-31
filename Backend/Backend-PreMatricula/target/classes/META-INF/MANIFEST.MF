@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: Backend of Pre-Matricula Project
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: thiagomoura
+Built-By: USUARIO
 Implementation-Vendor-Id: br.com.ufcg
-Build-Jdk: 1.8.0_171
+Build-Jdk: 1.8.0_121
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/Backend-PreMatricula
 Created-By: Maven Integration for Eclipse

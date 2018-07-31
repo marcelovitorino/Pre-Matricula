@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +25,14 @@ public class PreMatricula implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToMany//OneToMany ou ManyToMany????
+	@Column(nullable = false)
+	private Aluno aluno;
+	
+	//@OneToMany
+	//@JoinTable(name = "preMatricula_Disciplina", 
+	//joinColumns = @JoinColumn(name = "preMatricula_id", referencedColumnName = "id"),
+	//inverseJoinColumns = @JoinColumn(name = "Disciplina_id", referencedColumnName = "id"))
+	@OneToMany //---------------OneToMany ou ManyToMany????
 	@JoinColumn(name = "disciplinaId")
 	private Set<Disciplina> disciplinas;
 
@@ -33,9 +41,10 @@ public class PreMatricula implements Serializable {
 		this.disciplinas = new HashSet<Disciplina>();
 	}
 	
-	public PreMatricula(HashSet<Disciplina> disciplinas){// e se puder inicializar sem mandar as disciplinas?
+	public PreMatricula(HashSet<Disciplina> disciplinas, Aluno aluno){// e se puder inicializar sem mandar as disciplinas?
 		super();
 		this.disciplinas = disciplinas;
+		this.aluno = aluno;
 	}
 
 	public Set<Disciplina> getDisciplinas() {
@@ -60,6 +69,15 @@ public class PreMatricula implements Serializable {
 	
 	public Long getId(){
 		return id;
+	}
+	
+	@OneToOne(mappedBy = "preMatricula")
+	public Aluno getAluno(){
+		return aluno;
+	}
+	
+	public void setAluno(Aluno aluno){
+		this.aluno = aluno;
 	}
 	
 	@Override
