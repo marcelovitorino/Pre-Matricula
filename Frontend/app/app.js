@@ -31,7 +31,9 @@ app.config(function($routeProvider, $locationProvider) {
     })
      .when('/addCourse', {	
       templateUrl: 'app/views/CadastraDisciplina.html',	
-      controller: 'CadastraDisciplinaController'	
+      controller: 'CadastraDisciplinaController',
+      requireAuth: true,
+      requireSuperUser: true	
     })
   
       .when('/userdata', {

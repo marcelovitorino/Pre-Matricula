@@ -20,7 +20,7 @@ angular.module('app')
     }
 
     service.isCordinator = function (){
-      return false;
+      return true;
     }
 
 

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+#headbox h3{
+    margin-top: 3%;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 3%;
+}
+
+#data{
+    margin-bottom: 3%;
+}
+
+#data form button{
+    margin-top: 3%;
+}
+
+#matricula{
+    background: white;
+
+}
