@@ -2,7 +2,7 @@ angular.module('app')
     .controller('CadastraDisciplinaController',  function($rootScope, $location,AuthService)
     {
       
-        function send() {
+            $rootScope.sendCourse = function() {
               if (!validaNome()) {
                   //erro
                   
@@ -14,7 +14,7 @@ angular.module('app')
               else {
                   // POST
               }
-        }
+            }
 
 
         function validaNome() {
