@@ -14,7 +14,7 @@
 
 </head>
 
-<body class = "text-center" ng-controller="MainController">
+<body class = "text-center">
 
 <!-- Aplicação -->
 
@@ -30,7 +30,7 @@
   <ul class="navbar-nav mr-auto">
   <li class="nav-item active" ng-class="{active: activetab == '/'}"><a class="nav-link" href="/dashboard">Dashboard</a></li>
   <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/login">Login</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/login">Instruções</a></li>
+  <li class="nav-item" ng-class="{active: activetab == '/login'}"><a class="nav-link" href="/instructions">Instruções</a></li>
 </ul>
 <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,7 +56,7 @@
 
 
 
-<div ng-view></div>
+<div ng-view ng-controller="MainController"></div>
 
     
 
@@ -71,14 +71,18 @@
 
 <!--Scripts Aplicação -->
 <script src="app/app.js"></script>
+<!--Services-->
 <script src="app/Services/AuthService.js"></script>
+<script src="app/Services/ProfileService.js"></script>
 <!--Controllers-->
 <script src="app/controllers/MainController.js"></script>
 <script src="app/controllers/HeadController.js"></script>
 <script src="app/controllers/LoginController.js"></script>
 <script src="app/controllers/DashboardController.js"></script>
 <script src="app/controllers/UserDataController.js"></script>
-<!--Services-->
+<script src="app/controllers/SignUpController.js"></script>
+<script src="app/controllers/InstructionsController.js"></script>
+
 
 
 <!--Plugins-->

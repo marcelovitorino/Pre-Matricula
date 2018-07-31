@@ -3,7 +3,5 @@ angular.module('app')
     {
       
 
-      
-
     });
 
