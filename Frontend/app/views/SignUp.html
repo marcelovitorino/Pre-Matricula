@@ -1,5 +1,5 @@
  
- <form action="action_page.php" >
+ <form novalidate >
     <div class="container">
       <h1>Cadastro</h1>
       <p>Você precisará preencher este cadastro apenas uma vez</p>
@@ -8,20 +8,12 @@
       <label ><b>Matrícula</b></label>
       <input type="text" placeholder="Digite sua matrícula" required>
    
-      <div id = "option">
-      <lh1><b>Curso</b></h1>
-      <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" checked required>
-         PPC 1999 - Curso antigo
-      </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input"  required>
-          PPC 08/2017 - Curso Novo
-        </label>
-      </div> 
+    <div class="form-group">
+  <label for="sel1"><b>Selecione seu curso:</b></label>
+  <select class="form-control" id="sel1">
+    <option> PPC 1999 - Curso antigo</option>
+    <option>PPC 08/2017 - Curso Novo</option>
+  </select>
     </div>
 
 

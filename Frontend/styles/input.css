@@ -75,5 +75,9 @@ button:hover {
 }
 
 #text {
-    margin-top: 4%;
+   margin-top: 4%;
+}
+
+.container label{
+  text-align: left; 
 }
