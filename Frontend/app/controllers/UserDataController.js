@@ -4,6 +4,10 @@ angular.module('app')
        $rootScope.activetab = $location.path();
        $rootScope.user_email = AuthService.getUserDetails().email;
        $rootScope.matricula_usuario = 11210403;
+
+       $rootScope.send = function send(){
+           console.log('mandou');
+       }
      
 
     
