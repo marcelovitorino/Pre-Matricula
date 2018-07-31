@@ -2,6 +2,12 @@
 <div class="page-header">
 
   <div class = "container">
+     <div ng-switch = "isCCC">
+      <div ng-switch-when="false">
+        <div class="alert alert-danger" role="alert">
+          <strong>Entre com sua conta @CCC!</strong> Não foi possível fazer login.</div>
+      </div>
+     </div>               
     <img id = 'profile' ng-src="{{profile_image}}" class="rounded-circle img-fluid" alt="Placeholder image" width="200px" height="100px"> 
     <button g-login type="button" class="btn"> Login </button> 
   </div>

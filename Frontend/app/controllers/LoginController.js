@@ -1,6 +1,9 @@
 angular.module('app')
-    .controller('LoginController', function($rootScope, $location,AuthService,ProfileService)
+    .controller('LoginController', function($rootScope, $location,AuthService,$localStorage)
     {
+
+      $rootScope.isCCC = $localStorage.isCCC;
+      delete $localStorage.isCCC;
         if(AuthService.isLogged()){
           $location.path("/dashboard");
         }
