@@ -28,7 +28,11 @@ app.config(function($routeProvider, $locationProvider) {
      .when('/instructions', {	
       templateUrl: 'app/views/Instructions.html',	
       controller: 'InstructionsController'	
-  })
+    })
+     .when('/addCourse', {	
+      templateUrl: 'app/views/CadastraDisciplina.html',	
+      controller: 'CadastraDisciplinaController'	
+    })
   
       .when('/userdata', {
         templateUrl: 'app/views/UserData.html',
