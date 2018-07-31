@@ -6,8 +6,6 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -22,70 +20,55 @@ public class PreMatricula implements Serializable {
 
 	@Id
 	@Column(nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(nullable = false)
-	private Aluno aluno;
+	private String alunoEmail;
 	
 	//@OneToMany
 	//@JoinTable(name = "preMatricula_Disciplina", 
 	//joinColumns = @JoinColumn(name = "preMatricula_id", referencedColumnName = "id"),
 	//inverseJoinColumns = @JoinColumn(name = "Disciplina_id", referencedColumnName = "id"))
 	@OneToMany //---------------OneToMany ou ManyToMany????
-	@JoinColumn(name = "disciplinaId")
-	private Set<Disciplina> disciplinas;
+	@JoinColumn(name = "disciplinaCodigos")
+	private Set<String> disciplinasCodigos;
 
 	public PreMatricula() {//Mudei isso
 		super();
-		this.disciplinas = new HashSet<Disciplina>();
+		this.disciplinasCodigos = new HashSet<String>();
 	}
 	
-	public PreMatricula(HashSet<Disciplina> disciplinas, Aluno aluno){// e se puder inicializar sem mandar as disciplinas?
+	public PreMatricula(HashSet<String> disciplinas, String alunoEmail){// e se puder inicializar sem mandar as disciplinas?
 		super();
-		this.disciplinas = disciplinas;
-		this.aluno = aluno;
+		this.disciplinasCodigos = disciplinas;
+		this.alunoEmail = alunoEmail;
 	}
 
-	public Set<Disciplina> getDisciplinas() {
-		return disciplinas;
+	public Set<String> getDisciplinas() {
+		return disciplinasCodigos;
 	}
 
-	public void setDisciplinas(Set<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
+	public void setDisciplinas(Set<String> disciplinas) {
+		this.disciplinasCodigos = disciplinas;
 	}
 	
+	/*//Isso vai ser função do controlador de disciplinas
 	public int qtdCreditos(){
 		int creditos = 0;
-		for(Disciplina disciplina : disciplinas){
+		for(Disciplina disciplina : disciplinasCodigos){
 			creditos += disciplina.getNumCreditos();
 		}
 		return creditos;	
-	}
+	}*/
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 	
-	public Long getId(){
-		return id;
-	}
-	
+
 	@OneToOne(mappedBy = "preMatricula")
-	public Aluno getAluno(){
-		return aluno;
+	public String getAluno(){
+		return alunoEmail;
 	}
 	
-	public void setAluno(Aluno aluno){
-		this.aluno = aluno;
-	}
-	
-	@Override
-	public String toString() {
-		String result = "Disciplinas: \n";
-		for(Disciplina disciplina : disciplinas){
-			result += disciplina.toString();
-		}
-		return result;
+	public void setAluno(String alunoEmail){
+		this.alunoEmail = alunoEmail;
 	}
 }

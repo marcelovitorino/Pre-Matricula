@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import springboot.exception.RegisterNotFoundException;
-import springboot.model.Disciplina;
 import springboot.model.PreMatricula;
 import springboot.repository.PreMatriculaRepository;
 
@@ -21,8 +20,8 @@ public class PreMatriculaService {
 		return preMatriculaRepository.findAll();
 	}
 
-	public PreMatricula getById(Long id) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
+	public PreMatricula getById(String alunoEmail) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(alunoEmail);
 
 		if (!optPreMatricula.isPresent()) {
 			throw new RegisterNotFoundException("Pre-matricula não encontrada.");
@@ -36,8 +35,8 @@ public class PreMatriculaService {
 		return preMatricula;
 	}
 
-	public PreMatricula update(PreMatricula preMatricula, Long id) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
+	public PreMatricula update(PreMatricula preMatricula, String alunoEmail) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(alunoEmail);
 
 		if (!optPreMatricula.isPresent()) {
 			throw new RegisterNotFoundException("Pre-matricula não encontrada. Verificar se o id está correto");
@@ -51,8 +50,8 @@ public class PreMatriculaService {
 		return novaPreMatricula;
 	}
 
-	public PreMatricula delete(Long id) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
+	public PreMatricula delete(String alunoEmail) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(alunoEmail);
 
 		if (!optPreMatricula.isPresent()) {
 			throw new RegisterNotFoundException("Pre-matricula não encontrada. Verificar se o id está correto");
