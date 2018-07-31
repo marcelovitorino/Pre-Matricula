@@ -15,13 +15,13 @@ import springboot.model.Aluno;
 @Transactional
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
 	
-	@Query("SELECT * FROM Aluno a WHERE LOWER(a.nome) = LOWER(nome)")
+	@Query("SELECT * FROM aluno a WHERE LOWER(a.nome) = LOWER(nome)")
 	public List<Aluno> pesquisarPorNome(@Param("nome") String nome);
 	
-	@Query("SELECT * FROM Aluno a WHERE a.matricula = matricula")
+	@Query("SELECT * FROM aluno a WHERE a.matricula = matricula")
 	public List<Aluno> pesquisarPorMatricula(@Param("matricula") String matricula);
 	
-	@Query("SELECT * FROM Aluno a WHERE a.email = email")
+	@Query("SELECT * FROM aluno a WHERE a.email = email")
 	public List<Aluno> pesquisarPorEmail(@Param("email") String email);
 
 }

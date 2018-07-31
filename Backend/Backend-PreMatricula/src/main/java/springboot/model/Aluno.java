@@ -91,7 +91,6 @@ public class Aluno implements Serializable {
 
 	@Override
 	public String toString() {
-		
 		String result = String.format("Nome: %s, email: %s, matricula: %s, periodo de ingresso: %s", nome, email, matricula, periodoEntrada);
 		result += preMatricula.toString();
 		return result;

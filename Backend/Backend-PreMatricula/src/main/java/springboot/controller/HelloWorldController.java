@@ -14,4 +14,9 @@ public class HelloWorldController {
 	public String helloWorld() {
 		return "Hello, irineu!";
 	}
+	
+	//Criar os objetos PreMatricula, Aluno, Disciplina
+	// Listar todos os alunos que querem tal disciplina
+	//Cadastrar adm e remover adm
+	// Delegar as funcoes de PreMatricula, Aluno, Disciplina para os services
 }
