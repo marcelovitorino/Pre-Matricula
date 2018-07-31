@@ -11,12 +11,12 @@
 }
 
 input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
+  background-color: #b2c7ca;
   outline: none;
 }
 
 hr {
-  border: 1px solid #ddd;
+  border: 1px solid #17a2b8;
   margin-bottom: 25px;
 }
 
