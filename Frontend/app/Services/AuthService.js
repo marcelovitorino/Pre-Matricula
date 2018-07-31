@@ -20,6 +20,12 @@ angular.module('app')
       $localStorage.$reset();
     }
 
+    service.isCCC = function(){
+      email = $localStorage.UserDetails.email.split("@");
+      return email[1] == "ccc.ufcg.edu.br";
+
+    }
+
     service.isLogged = function(){ return $localStorage.UserDetails !== undefined};
 
     return service;

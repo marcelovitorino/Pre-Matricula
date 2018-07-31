@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('MainController',  function($rootScope, $location,AuthService,ProfileService)
+    .controller('MainController',  function($rootScope, $location,AuthService,ProfileService,$window)
     {
        $rootScope.activetab = $location.path();
 
@@ -21,9 +21,18 @@ angular.module('app')
 
         $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
             AuthService.setUserDetails(userDetails);
+            if(AuthService.isCCC()){
             $rootScope.isLogged = true;
             ProfileService.update_user_profile();
             $rootScope.$apply();
+        }
+
+            else{
+                AuthService.logout();
+                $location.path("/login");
+                $window.location.href = '/';
+                
+            }
             
 
        });
@@ -32,6 +41,8 @@ angular.module('app')
         ProfileService.update_visitant_profile();
         $rootScope.isLogged = false;
         $location.path("/login");
+        $window.location.href = '/';
+       
       
 
     });
