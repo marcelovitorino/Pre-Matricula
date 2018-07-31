@@ -1,4 +1,50 @@
-
 <div class="page-header">
-       <h1>User Data</h1>
-        </div>
+
+
+    <div class="container" id=h eadbox>
+        <h3>MEUS DADOS</h3>
+    </div>
+
+    <div class="container" id="data">
+
+        <form id = "my_data" name="myDataForm" ng-submit="send()">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+                <div class="col-sm-10">
+                    
+                        <input class="form-control" type="text" placeholder={{user_email}} readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <label for="staticName" class="col-sm-2 col-form-label">Nome:</label>
+                    <div class="col-sm-10">
+                            <input class="form-control" ng-model="" type="text" placeholder={{nome_usuario}} readonly>
+                       
+                    </div>
+                </div>
+            <div class="form-group row">
+                <label for="inputText" class="col-sm-2 col-form-label">Matrícula:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputText" value = {{matricula_usuario}}>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                    <label for="form-control" class="col-sm-2 col-form-label">Curso:</label>
+                    <div class="col-sm-10">
+                    <select class="form-control">
+                            <option>Curso 1</option>
+                            <option>Curso 2</option>
+                          </select></div>
+                </div>
+
+
+
+
+            
+        </form>
+
+    </div>
+
+
+</div>

@@ -11,6 +11,8 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: 'app/views/Dashboard.html',
       controller: 'DashboardController',
       requireAuth: true,
+      requireRegistered: true,
+      
      
     })
       .when('/login', {
@@ -20,7 +22,8 @@ app.config(function($routeProvider, $locationProvider) {
 
       .when('/signup', {	
         templateUrl: 'app/views/SignUp.html',	
-        controller: 'SignUpController'	
+        controller: 'SignUpController',
+        requireAuth: true
     })	
      .when('/instructions', {	
       templateUrl: 'app/views/Instructions.html',	
@@ -31,10 +34,11 @@ app.config(function($routeProvider, $locationProvider) {
       controller: 'CadastraDisciplinaController'	
     })
   
-      .when('/userData', {
+      .when('/userdata', {
         templateUrl: 'app/views/UserData.html',
         controller: 'UserDataController',
         requireAuth: true,
+        requireRegistered:true
       
     })
       .otherwise({

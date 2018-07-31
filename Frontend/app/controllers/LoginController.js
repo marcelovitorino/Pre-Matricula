@@ -1,22 +1,27 @@
 angular.module('app')
-    .controller('LoginController', function($rootScope, $location,AuthService)
-    {
-        if(AuthService.isLogged()){
-          $location.path("/dashboard");
-        }
+  .controller('LoginController', function ($rootScope, $location, AuthService, $localStorage) {
 
-       $rootScope.activetab = $location.path();
+    $rootScope.isCCC = $localStorage.isCCC;
+    delete $localStorage.isCCC;
+    if (AuthService.isLogged()) {
+      $location.path("/dashboard");
+    }
 
-       $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
-        AuthService.setUserDetails(userDetails);
-        $rootScope.profile_image = AuthService.getUserDetails().imageUrl;
-        $rootScope.nome_usuario = AuthService.getUserDetails().name;
-        $rootScope.isLogged = true;
+    $rootScope.activetab = $location.path();
+
+    $rootScope.$on('event:social-sign-in-success', function (event, userDetails) {
+      if (AuthService.isRegistered()) {
         $location.path("/dashboard");
-        $rootScope.$apply();
-        
+      }
 
-   });
-   
+      else {
+        $location.path("/cordinatorPanel");
+      }
+
+      $rootScope.$apply();
+
+
     });
+
+  });
 

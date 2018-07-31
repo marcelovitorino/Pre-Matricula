@@ -15,7 +15,7 @@
 
 </head>
 
-<body class = "text-center" ng-controller="MainController">
+<body class = "text-center">
 
 <!-- Aplicação -->
 
@@ -59,7 +59,7 @@
 
 
 
-<div ng-view></div>
+<div ng-view ng-controller="MainController"></div>
 
     
 
@@ -74,7 +74,9 @@
 
 <!--Scripts Aplicação -->
 <script src="app/app.js"></script>
+<!--Services-->
 <script src="app/Services/AuthService.js"></script>
+<script src="app/Services/ProfileService.js"></script>
 <!--Controllers-->
 <script src="app/controllers/MainController.js"></script>
 <script src="app/controllers/HeadController.js"></script>
@@ -85,7 +87,7 @@
 <script src="app/controllers/InstructionsController.js"> </script>
 <script src="app/controllers/CadastraDisciplinaController.js"> </script>
 
-<!--Services-->
+
 
 
 <!--Plugins-->
