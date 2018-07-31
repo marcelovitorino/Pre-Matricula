@@ -1,19 +1,10 @@
 angular.module('app')
-    .controller('UserDataController',  function($rootScope, $location)
+    .controller('UserDataController',  function($rootScope, $location,AuthService)
     {
        $rootScope.activetab = $location.path();
-       $rootScope.profile_image = "/../../images/profile.png";
-
-
-
-      
-       $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
-            $rootScope.$apply(function(){
-                $rootScope.profile_image = userDetails.imageUrl;  
-                $rootScope.nome = userDetails.name;
-            });
+       $rootScope.user_email = AuthService.getUserDetails().email;
+       $rootScope.matricula_usuario = 11210403;
      
-       });
 
     
     });
