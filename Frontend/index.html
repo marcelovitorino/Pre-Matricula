@@ -12,6 +12,7 @@
 <link href="styles/estilo.css" rel="stylesheet" type="text/css">
 <link href="styles/login.css" rel="stylesheet" type="text/css">
 <link href="styles/input.css" rel="stylesheet" type="text/css">
+<link href="styles/userdata.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -42,7 +43,7 @@
           <div ng-switch = "isLogged">
          <div ng-switch-when="true">
          <h6 class="dropdown-header">{{nome_usuario}}</h6>
-         <a class="dropdown-item" href ="#">Meus Dados</a>
+         <a class="dropdown-item" href ="/userdata">Meus Dados</a>
          <div class="dropdown-divider"></div>
          <a class="dropdown-item" ng-click="logout()" href="#">Logout</a>
          </div>

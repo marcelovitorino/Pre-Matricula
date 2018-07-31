@@ -7,41 +7,50 @@
 
     <div class="container" id="data">
 
-        <form id = "my_data" name="myDataForm" ng-submit="send()">
+        <form name="myDataForm" ng-submit="send()">
             <div class="form-group row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-10">
-                    
-                        <input class="form-control" type="text" placeholder={{user_email}} readonly>
+
+                    <input class="form-control" type="text" placeholder={{user_email}} readonly>
                 </div>
             </div>
             <div class="form-group row">
-                    <label for="staticName" class="col-sm-2 col-form-label">Nome:</label>
-                    <div class="col-sm-10">
-                            <input class="form-control" ng-model="" type="text" placeholder={{nome_usuario}} readonly>
-                       
-                    </div>
-                </div>
-            <div class="form-group row">
-                <label for="inputText" class="col-sm-2 col-form-label">Matrícula:</label>
+                <label for="staticName" class="col-sm-2 col-form-label">Nome:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" value = {{matricula_usuario}}>
+                    <input class="form-control" type="text" placeholder={{nome_usuario}} readonly>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputText" class="col-sm-2 col-form-label" >Matrícula:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="matricula" value={{matricula_usuario}}>
                 </div>
             </div>
 
             <div class="form-group row">
-                    <label for="form-control" class="col-sm-2 col-form-label">Curso:</label>
-                    <div class="col-sm-10">
+                <label for="form-control" class="col-sm-2 col-form-label">Curso:</label>
+                <div class="col-sm-10">
                     <select class="form-control">
-                            <option>PPC 1999 - Curso Antigo</option>
-                            <option>PPC 08/2017 - Curso Novo</option>
-                          </select></div>
+                        <option>PPC 1999 - Curso Antigo</option>
+                        <option>PPC 08/2017 - Curso Novo</option>
+                    </select>
                 </div>
+            </div>
+
+            <div class="form-group">
+              
+                    <button type="submit" class="btn btn-default">Atualizar</button>
+              
+            </div>
+
+          
 
 
 
 
-            
+
         </form>
 
     </div>
