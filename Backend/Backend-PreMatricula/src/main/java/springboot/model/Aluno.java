@@ -27,7 +27,7 @@ public class Aluno implements Serializable {
 	@Column(nullable = false)
 	private String periodoEntrada;
 	
-	@Column(nullable = false)// mantem essa ssinatura?
+	@Column(nullable = false)// mantem essa assinatura?
 	private PreMatricula preMatricula;
 	
 	public Aluno(){
@@ -75,8 +75,11 @@ public class Aluno implements Serializable {
 		this.periodoEntrada = periodoEntrada;
 	}
 	
+	//@JoinTable(name = "book_publisher", 
+	//joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
+	//inverseJoinColumns = @JoinColumn(name = "publisher_id", referencedColumnName = "id"))
 	@OneToOne
-	@JoinColumn(name = "preMatriculaId")
+	@JoinColumn(name = "AlunoPreMatricula")
 	public PreMatricula getPreMatricula() {
 		return preMatricula;
 	}

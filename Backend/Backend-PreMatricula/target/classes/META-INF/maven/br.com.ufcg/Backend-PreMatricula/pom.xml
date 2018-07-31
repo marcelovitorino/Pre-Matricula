@@ -49,12 +49,10 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Use MySQL Connector-J 
-
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency> -->
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
 
 	</dependencies>
 
