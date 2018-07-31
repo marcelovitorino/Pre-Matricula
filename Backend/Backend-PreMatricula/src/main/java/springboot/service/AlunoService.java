@@ -7,9 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exception.RegisterNotFoundException;
-import repository.AlunoRepository;
+import springboot.exception.RegisterNotFoundException;
 import springboot.model.Aluno;
+import springboot.repository.AlunoRepository;
 
 @Service
 public class AlunoService {
@@ -49,7 +49,7 @@ public class AlunoService {
 		newAluno.setMatricula(aluno.getMatricula());
 		newAluno.setEmail(aluno.getEmail());
 		newAluno.setPeriodoEntrada(aluno.getPeriodoEntrada());
-		//newAluno.setPreMatricula(aluno.getPreMatricula());
+		newAluno.setPreMatricula(aluno.getPreMatricula());
 
 		alunoRepository.save(newAluno);
 

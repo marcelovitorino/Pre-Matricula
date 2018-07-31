@@ -1,4 +1,4 @@
-package exception;
+package springboot.exception;
 
 public class RegisterNotFoundException extends NullPointerException {
 
