@@ -11,7 +11,8 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: 'app/views/Dashboard.html',
       controller: 'DashboardController',
       requireAuth: true,
-      requireRegistered: true
+      requireRegistered: true,
+      
      
     })
       .when('/login', {
@@ -29,7 +30,7 @@ app.config(function($routeProvider, $locationProvider) {
       controller: 'InstructionsController'	
   })
   
-      .when('/userData', {
+      .when('/userdata', {
         templateUrl: 'app/views/UserData.html',
         controller: 'UserDataController',
         requireAuth: true,
