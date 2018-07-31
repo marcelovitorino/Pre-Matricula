@@ -1,38 +1,36 @@
-<div class="page-header">
-        <h1>Cadastro</h1>
+ 
+ <form action="action_page.php" >
+    <div class="container">
+      <h1>Cadastro</h1>
+      <p>Você precisará preencher este cadastro apenas uma vez</p>
+      <hr>
+  
+      <label for="email"><b>Matrícula</b></label>
+      <input type="text" placeholder="Digite sua matrícula" name="email" required>
+   
+      <div id = "option">
+      <lh1><b>Curso</b></h1>
+      <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" value="option1" checked required>
+         PPC 1999 - Curso antigo
+      </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" value="option2" required>
+          PPC 08/2017 - Curso Novo
+        </label>
+      </div> 
+    </div>
 
-        <fieldset class="form-group">
-                <form>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Matrícula </label>
-                    <input  class="form-control">
-                  </div>
-              
-                    <legend>Curso</legend>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" value="option1" checked>
-                        PPC 1999 - Curso antigo
-                      </label>
-                    </div>
-                    <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" value="option2">
-                        PPC 08/2017 - Curso Novo
-                      </label>
-                    </div>
-              
-              
-                  
-                  <div class="form-group">
-                    <label for="exampleTextarea">Algo em especial sobre a sua matrícula que a coordenação PRECISA saber?</label>
-                    
-                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                  </div>
-              
-              
-                  <button type="submit" class="btn btn-primary"> Enviar </button>
-                </form>
-              </fieldset>
-              
- </div>
+
+      <label id = "text" for="email"><b>Algo em especial sobre a sua matrícula que a coordenação PRECISA saber?</b></label>
+      <input for="exampleTextarea" type="text" placeholder="Digite algo" name="email" required>
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancelar</button>
+        <button type="submit" class="signupbtn">Registrar</button>
+      </div>
+    </div>
+  </form>
