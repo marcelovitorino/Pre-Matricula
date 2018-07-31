@@ -17,6 +17,9 @@ angular.module('app')
         if (newUrl.requireAuth && !AuthService.isLogged()) {
             $location.path("/login");
         }
+        else if(newUrl.requireRegistered && !AuthService.isRegistered()){
+            $location.path("/signup");
+        }
     });
 
         $rootScope.$on('event:social-sign-in-success', function(event, userDetails){

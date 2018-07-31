@@ -9,16 +9,17 @@ angular.module('app')
     service.setUserDetails = function (UserDetails) {
         $localStorage.UserDetails = UserDetails;
       },
-    service.signin = function (data) {
-      $http.post('api/signin', data);
-    },
-    service.signup = function (data) {
-      $http.post('api/signup', data);
-    },
+   
     service.logout = function () {
       socialLoginService.logout();
       $localStorage.$reset();
+    },
+
+    service.isRegistered = function (){
+      return true;
     }
+
+
 
     service.isCCC = function(){
       email = $localStorage.UserDetails.email.split("@");

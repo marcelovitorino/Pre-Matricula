@@ -11,7 +11,11 @@ angular.module('app')
        $rootScope.activetab = $location.path();
 
        $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
-        $location.path("/dashboard");
+         if(AuthService.isRegistered()){
+        $location.path("/dashboard"); }
+         else{
+          $location.path("/signup"); 
+         }
         $rootScope.$apply();
         
 
