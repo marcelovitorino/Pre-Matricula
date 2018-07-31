@@ -44,16 +44,16 @@ public class AlunoService {
 			throw new RegisterNotFoundException("Aluno não está cadastrado.");
 		}
 
-		Aluno newAluno = optAluno.get();
-		newAluno.setNome(aluno.getNome());
-		newAluno.setMatricula(aluno.getMatricula());
-		newAluno.setEmail(aluno.getEmail());
-		newAluno.setPeriodoEntrada(aluno.getPeriodoEntrada());
-		newAluno.setPreMatricula(aluno.getPreMatricula());
+		Aluno novoAluno = optAluno.get();
+		novoAluno.setNome(aluno.getNome());
+		novoAluno.setMatricula(aluno.getMatricula());
+		novoAluno.setEmail(aluno.getEmail());
+		novoAluno.setPeriodoEntrada(aluno.getPeriodoEntrada());
+		novoAluno.setPreMatricula(aluno.getPreMatricula());
 
-		alunoRepository.save(newAluno);
+		alunoRepository.save(novoAluno);
 
-		return newAluno;
+		return novoAluno;
 	}
 
 	public Aluno delete(Long id) {
@@ -69,7 +69,15 @@ public class AlunoService {
 		return aluno;
 	}
 	
-	public List<Aluno> searchByName(String name) {
-		return alunoRepository.searchByNome(name);
+	public List<Aluno> pesquisarPorNome(String nome) {
+		return alunoRepository.pesquisarPorNome(nome);
+	}
+	
+	public List<Aluno> pesquisarPorMatricula(String matricula) {
+		return alunoRepository.pesquisarPorMatricula(matricula);
+	}
+	
+	public List<Aluno> pesquisarPorEmail(String email) {
+		return alunoRepository.pesquisarPorEmail(email);
 	}
 }

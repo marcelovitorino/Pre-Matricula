@@ -16,6 +16,9 @@ import springboot.model.Disciplina;
 public interface DisciplinaRepository extends JpaRepository<Disciplina, Long>{
 	
 	@Query("SELECT id, codigo, numCreditos, cargaHoraria, tipo, ppc FROM Disciplina d WHERE LOWER(d.nome)  = LOWER(nome)")
-	public List<Disciplina> procurarPorNome(@Param("nome") String nome);
+	public List<Disciplina> pesquisarPorNome(@Param("nome") String nome);
+	
+	@Query("SELECT * FROM Disciplina d WHERE d.codigo = codigo")
+	public List<Disciplina> pesquisarPorCodigo(@Param("codigo") String codigo);
 
 }
