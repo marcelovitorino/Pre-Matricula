@@ -76,9 +76,11 @@ public class Aluno implements Serializable {
 		this.periodoEntrada = periodoEntrada;
 	}
 	
-	//@JoinTable(name = "book_publisher", 
-	//joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
-	//inverseJoinColumns = @JoinColumn(name = "publisher_id", referencedColumnName = "id"))
+	
+	//@OneToOne (cascade = CascadeType.ALL)
+	//@JoinTable(name = "aluno_preMatricula", 
+	//joinColumns = @JoinColumn(name = "email_aluno", referencedColumnName = "email"),
+	//inverseJoinColumns = @JoinColumn(name = "preMatricula_id", referencedColumnName = "id"))
 	@OneToOne
 	@JoinColumn(name = "AlunoPreMatricula")
 	public PreMatricula getPreMatricula() {
