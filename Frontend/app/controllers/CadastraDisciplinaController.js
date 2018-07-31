@@ -1,8 +1,8 @@
 angular.module('app')
-    .controller('CadastraDisciplinaController',  function($rootScope, $location,AuthService)
+    .controller('CadastraDisciplinaController',  function($scope, $location,AuthService)
     {
       
-            $rootScope.sendCourse = function() {
+            $scope.sendCourse = function() {
               if (!validaNome()) {
                   //erro
                   
@@ -18,22 +18,16 @@ angular.module('app')
 
 
         function validaNome() {
-            if (isEmpty($rootScope.nomeDisciplina)) {
+            if (isEmpty($scope.nomeDisciplina) || !isNaN($scope.nomeDisciplina)) {
                 return false;
             }   
         }
 
         function validaCodigoDisciplina() {
-            if (isEmpty($rootScope.codigoDisciplina)) {
+            if (isEmpty($scope.codigoDisciplina)) {
                 return false;
             }   
         }
-
-        function validaCargaHoraria() {
-            if ($rootScope.cargaHoraria < 0) {
-                return false;
-            }   
-        }       
 
 
         function isEmpty(string) {
