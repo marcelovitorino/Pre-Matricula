@@ -14,9 +14,6 @@ public class Admin implements Serializable{
 	
 	@Id
 	@Column(nullable = false)
-	private Long id;
-	
-	@Column(nullable = false)
 	private String email;
 	
 	public Admin(){
@@ -34,10 +31,6 @@ public class Admin implements Serializable{
 	
 	public void setEmail(String email){
 		this.email = email;
-	}
-	
-	public Long getId(){
-		return id;
 	}
 	
 	public static long getSerialversionuid() {

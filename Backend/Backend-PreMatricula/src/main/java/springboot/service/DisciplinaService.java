@@ -20,8 +20,8 @@ public class DisciplinaService {
 		return disciplinaRepository.findAll();
 	}
 
-	public Disciplina getById(Long id) {
-		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(id);
+	public Disciplina getById(String codigo) {
+		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(codigo);
 
 		if (!optDisciplina.isPresent()) {
 			throw new RegisterNotFoundException("Disciplina não está cadastrada.");
@@ -35,8 +35,8 @@ public class DisciplinaService {
 		return disciplina;
 	}
 
-	public Disciplina update(Disciplina disciplina, Long id) {
-		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(id);
+	public Disciplina update(Disciplina disciplina, String codigo) {
+		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(codigo);
 
 		if (!optDisciplina.isPresent()) {
 			throw new RegisterNotFoundException("Disciplina não está cadastrada.");
@@ -55,8 +55,8 @@ public class DisciplinaService {
 		return novaDisciplina;
 	}
 
-	public Disciplina delete(Long id) {
-		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(id);
+	public Disciplina delete(String codigo) {
+		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(codigo);
 
 		if (!optDisciplina.isPresent()) {
 			throw new RegisterNotFoundException("Disciplina não está cadastrada.");

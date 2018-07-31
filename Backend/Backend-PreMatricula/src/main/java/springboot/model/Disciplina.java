@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,14 +14,11 @@ public class Disciplina implements Serializable {
 	private static final long serialVersionUID = -10081008326902346L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(nullable = false)
-	private String nome;
-
 	@Column(nullable = false)
 	private String codigo;
+	
+	@Column(nullable = false)
+	private String nome;
 
 	@Column(nullable = false)
 	private int numCreditos;
@@ -104,10 +99,6 @@ public class Disciplina implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	public Long getId(){
-		return id;
-	}
 
 	@Override
 	public String toString() {// VERIFICAR SE É MEMSO ASSIM O TOSTRING REQUERIDO
@@ -115,7 +106,5 @@ public class Disciplina implements Serializable {
 				nome, codigo, numCreditos, cargaHoraria, ppc, tipo);
 		return result;
 	}
-	
-	
 
 }
