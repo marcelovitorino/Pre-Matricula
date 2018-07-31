@@ -19,6 +19,10 @@ angular.module('app')
       return true;
     }
 
+    service.isCordinator = function (){
+      return false;
+    }
+
 
 
     service.isCCC = function(){
