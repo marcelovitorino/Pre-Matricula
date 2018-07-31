@@ -16,18 +16,18 @@ public class Aluno implements Serializable {
 
 	@Id
 	@Column(nullable = false)
+	private String email;
+	
+	@Column(nullable = false)
 	private String matricula;
 	
 	@Column(nullable = false)
 	private String nome;
 
 	@Column(nullable = false)
-	private String email;
-
-	@Column(nullable = false)
 	private String periodoEntrada;
 	
-	@Column(nullable = false)// mantem essa assinatura?
+	@Column(nullable = true)// mantem essa assinatura?
 	private PreMatricula preMatricula;
 	
 	public Aluno(){

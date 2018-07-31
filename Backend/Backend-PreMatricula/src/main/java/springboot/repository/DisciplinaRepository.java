@@ -15,10 +15,10 @@ import springboot.model.Disciplina;
 @Transactional
 public interface DisciplinaRepository extends JpaRepository<Disciplina, Long>{
 	
-	@Query("SELECT * FROM disciplina d WHERE LOWER(d.nome)  = LOWER(nome)")
+	@Query("SELECT d FROM Disciplina d WHERE LOWER(d.nome) LIKE CONCAT('%', LOWER(:nome), '%')")
 	public List<Disciplina> pesquisarPorNome(@Param("nome") String nome);
 	
-	@Query("SELECT * FROM disciplina d WHERE d.codigo = codigo")
+	@Query("SELECT d FROM Disciplina d WHERE LOWER(d.codigo) LIKE CONCAT('%', LOWER(:codigo), '%')")
 	public List<Disciplina> pesquisarPorCodigo(@Param("codigo") String codigo);
 
 }

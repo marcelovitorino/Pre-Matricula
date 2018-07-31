@@ -15,7 +15,7 @@ import springboot.model.Admin;
 @Transactional
 public interface AdminRepository extends JpaRepository<Admin, Long>{
 	
-	@Query("SELECT * FROM admin a WHERE a.email = email")
+	@Query("SELECT a FROM Admin a WHERE LOWER(a.email) LIKE CONCAT('%', LOWER(:email), '%')")
 	public List<Admin> pesquisarPorEmail(@Param("email") String email);
 
 }
