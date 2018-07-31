@@ -34,18 +34,18 @@ public class AlunoController {
 	}
 
 	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.GET)
-	public Aluno getById(@PathVariable("id") Long id) {
+	public Aluno getById(@PathVariable("id") String id) {
 		return alunoService.getById(id);
 	}
 
 	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Aluno> update(@PathVariable("id") Long id, @RequestBody Aluno aluno) {
+	public ResponseEntity<Aluno> update(@PathVariable("id") String id, @RequestBody Aluno aluno) {
 		Aluno updatedAluno = alunoService.update(aluno, id);
 		return new ResponseEntity<Aluno>(updatedAluno, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Aluno> delete(@PathVariable("id") Long id) {
+	public ResponseEntity<Aluno> delete(@PathVariable("id") String id) {
 		Aluno aluno = alunoService.delete(id);
 		return new ResponseEntity<Aluno>(aluno, HttpStatus.OK);
 	}

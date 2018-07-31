@@ -22,7 +22,7 @@ public class AlunoService {
 		return alunoRepository.findAll();
 	}
 
-	public Aluno getById(Long id) {
+	public Aluno getById(String id) {
 		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
@@ -37,7 +37,7 @@ public class AlunoService {
 		return aluno;
 	}
 
-	public Aluno update(Aluno aluno, Long id) {
+	public Aluno update(Aluno aluno, String id) {
 		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
@@ -56,7 +56,7 @@ public class AlunoService {
 		return novoAluno;
 	}
 
-	public Aluno delete(Long id) {
+	public Aluno delete(String id) {
 		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
@@ -71,10 +71,6 @@ public class AlunoService {
 	
 	public List<Aluno> pesquisarPorNome(String nome) {
 		return alunoRepository.pesquisarPorNome(nome);
-	}
-	
-	public List<Aluno> pesquisarPorMatricula(String matricula) {
-		return alunoRepository.pesquisarPorMatricula(matricula);
 	}
 	
 	public List<Aluno> pesquisarPorEmail(String email) {

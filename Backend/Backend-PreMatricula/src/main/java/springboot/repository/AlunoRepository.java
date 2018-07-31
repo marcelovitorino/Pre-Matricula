@@ -13,7 +13,7 @@ import springboot.model.Aluno;
 
 @Repository
 @Transactional
-public interface AlunoRepository extends JpaRepository<Aluno, Long>{
+public interface AlunoRepository extends JpaRepository<Aluno, String>{
 	
 	@Query("SELECT * FROM aluno a WHERE LOWER(a.nome) = LOWER(nome)")
 	public List<Aluno> pesquisarPorNome(@Param("nome") String nome);
