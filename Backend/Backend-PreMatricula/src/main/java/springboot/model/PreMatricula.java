@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
  
 @Entity
@@ -35,7 +35,7 @@ public class PreMatricula implements Serializable{
     private String email;
    
     @Column(nullable = false)
-    @OneToMany
+    @ManyToMany
     private Set<Disciplina> disciplinas;
    
    
@@ -48,7 +48,6 @@ public class PreMatricula implements Serializable{
         this.email = email;
         this.disciplinas = disciplinas;
     }
-   
    
     public String getEmail() {
         return email;

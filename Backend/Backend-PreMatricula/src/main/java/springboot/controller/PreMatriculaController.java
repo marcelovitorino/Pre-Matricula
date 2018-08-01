@@ -33,9 +33,9 @@ public class PreMatriculaController {
 		return preMatriculaService.save(preMatricula);
 	}
 
-	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.GET)
-	public PreMatricula getByCodigo(@PathVariable("id") Long id) {
-		return preMatriculaService.getById(id);
+	@RequestMapping(value = "/prematricula/{email}", method = RequestMethod.GET)
+	public List<PreMatricula> getByCodigo(@PathVariable("email") String email) {
+		return preMatriculaService.getByEmail(email);
 	}
 
 	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.PUT)

@@ -64,5 +64,9 @@ public class PreMatriculaService {
 		return preMatricula;
 	}
 
+	public List<PreMatricula> getByEmail(String email) {
+		return preMatriculaRepository.pesquisarPorEmail(email);
+	}
+
 
 }

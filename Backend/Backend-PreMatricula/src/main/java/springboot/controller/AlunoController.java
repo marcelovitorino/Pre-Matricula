@@ -33,9 +33,9 @@ public class AlunoController {
 		return alunoService.save(aluno);
 	}
 
-	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.GET)
-	public Aluno getByEmail(@PathVariable("id") String id) {
-		return alunoService.getById(id);
+	@RequestMapping(value = "/aluno/{email}", method = RequestMethod.GET)
+	public Aluno getByEmail(@PathVariable("email") String email) {
+		return alunoService.getById(email);
 	}
 
 	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.PUT)
@@ -43,17 +43,9 @@ public class AlunoController {
 		Aluno updatedAluno = alunoService.update(aluno, id);
 		return new ResponseEntity<Aluno>(updatedAluno, HttpStatus.OK);
 	}
-
-	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Aluno> delete(@PathVariable("id") String id) {
-		Aluno aluno = alunoService.delete(id);
-		return new ResponseEntity<Aluno>(aluno, HttpStatus.OK);
-	}
-
 	
 	@RequestMapping(value = "/aluno/search/{matricula}", method = RequestMethod.GET)
 	public List<Aluno> searchByMatricula(@PathVariable("matricula") String matricula) {
 		return alunoService.pesquisarPorMatricula(matricula);
 	}
-
 }
