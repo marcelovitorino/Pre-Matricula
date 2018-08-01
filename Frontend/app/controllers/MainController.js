@@ -5,8 +5,12 @@ angular.module('app')
 
         $rootScope.isLogged = AuthService.isLogged();
 
+        if(UserService.isCordinator()) 
+            $rootScope.user_type = "cordinator";
+        else 
+             $rootScope.user_type = "student";
 
-        if(UserService.isCordinator()) $rootScope.user_type = "cordinator"; else $rootScope.user_type = "student";
+     
 
         if ($rootScope.isLogged) {
             ProfileService.update_user_profile();
@@ -22,8 +26,8 @@ angular.module('app')
             else if (newUrl.requireRegistered && !UserService.isRegistered()) {
                 $location.path("/signup");
             }
-            else if (newUrl. requireNotRegistered && UserService.isRegistered()){
-                $location.path("/dashboard");
+            else if (newUrl.requireNotRegistered && UserService.isRegistered() &&!UserService.isCordinator()){
+                $location.path("/matricula");
             }
 
             else if (newUrl.requireSuperUser && !UserService.isCordinator()) {
@@ -38,6 +42,7 @@ angular.module('app')
                 $rootScope.isLogged = true;
                 ProfileService.update_user_profile();
                 $rootScope.$apply();
+                
             }
 
             else {
@@ -56,7 +61,7 @@ angular.module('app')
             ProfileService.update_visitant_profile();
             $rootScope.isLogged = false;
             $location.path("/login");
-            $window.location.href = '/';
+            $window.location.href = '/login';
 
 
 
