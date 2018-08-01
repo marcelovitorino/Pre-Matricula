@@ -7,8 +7,7 @@ angular.module('app')
       
       
             $scope.sendCourse = function() {
-                console.log("mandou");
-              //POST
+              
             }
 
 
