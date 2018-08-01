@@ -69,10 +69,6 @@ public class AlunoService {
 		return aluno;
 	}
 	
-	public List<Aluno> pesquisarPorNome(String nome) {
-		return alunoRepository.pesquisarPorNome(nome);
-	}
-	
 	public List<Aluno> pesquisarPorEmail(String email) {
 		return alunoRepository.pesquisarPorEmail(email);
 	}
