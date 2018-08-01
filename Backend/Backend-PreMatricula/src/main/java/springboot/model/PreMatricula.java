@@ -1,13 +1,15 @@
 package springboot.model;
  
 import java.io.Serializable;
- 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
  
@@ -34,17 +36,18 @@ public class PreMatricula implements Serializable{
     private String email;
    
     @Column(nullable = false)
-    private Disciplina disciplina;
+    @OneToMany
+    private Set<Disciplina> disciplinas;
    
    
     public PreMatricula(){
        
     }
    
-    public PreMatricula(String email, Disciplina disciplina) {
+    public PreMatricula(String email, Set<Disciplina> disciplinas) {
         super();
         this.email = email;
-        this.disciplina = disciplina;
+        this.disciplinas = disciplinas;
     }
    
    
@@ -58,12 +61,12 @@ public class PreMatricula implements Serializable{
  
     @OneToOne
     @JoinColumn(name = "PremDisciplina")
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public Set<Disciplina> getDisciplina() {
+        return disciplinas;
     }
  
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setDisciplina(Set<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
  
     public static long getSerialversionuid() {
