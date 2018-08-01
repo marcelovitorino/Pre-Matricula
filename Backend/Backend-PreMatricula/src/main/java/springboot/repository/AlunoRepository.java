@@ -14,9 +14,6 @@ import springboot.model.Aluno;
 @Transactional
 public interface AlunoRepository extends JpaRepository<Aluno, String> {
 
-	@Query("SELECT a FROM Aluno a WHERE LOWER(a.nome) LIKE CONCAT('%', LOWER(:nome), '%')")
-	public List<Aluno> pesquisarPorNome(@Param("nome") String nome);
-
 	@Query("SELECT a FROM Aluno a WHERE LOWER(a.matricula) LIKE CONCAT('%', LOWER(:matricula), '%')")
 	public List<Aluno> pesquisarPorMatricula(@Param("matricula") String matricula);
 

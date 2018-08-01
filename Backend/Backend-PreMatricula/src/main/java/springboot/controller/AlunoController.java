@@ -34,7 +34,7 @@ public class AlunoController {
 	}
 
 	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.GET)
-	public Aluno getById(@PathVariable("id") String id) {
+	public Aluno getByEmail(@PathVariable("id") String id) {
 		return alunoService.getById(id);
 	}
 
@@ -51,9 +51,9 @@ public class AlunoController {
 	}
 
 	
-	@RequestMapping(value = "/aluno/search/{text}", method = RequestMethod.GET)
-	public List<Aluno> searchByEmail(@PathVariable("email") String email) {
-		return alunoService.pesquisarPorEmail(email);
+	@RequestMapping(value = "/aluno/search/{nome}", method = RequestMethod.GET)
+	public List<Aluno> searchByNome(@PathVariable("nome") String nome) {
+		return alunoService.pesquisarPorEmail(nome);
 	}
 
 }
