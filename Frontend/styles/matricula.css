@@ -7,9 +7,9 @@
 
 .discipline{
     margin: 4px 4px 4px 4px;
-    background: #17a2b8!important;
+    background:lightgrey;
     border-radius: 5px;
-    border: 3px solid royalblue;
+    border: 3px solid grey;
     list-style: none;
 
 }
@@ -48,6 +48,10 @@
     margin-top:3%;
     font-family: 'Oswald', sans-serif;
     text-align: left;
+}
+
+.nome{
+    color:black;
 }
 
 
