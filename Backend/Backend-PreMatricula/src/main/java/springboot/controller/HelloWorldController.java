@@ -12,7 +12,7 @@ public class HelloWorldController {
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String helloWorld() {
-		return "Hello, irineu!";
+		return "Hello, World!!!";
 	}
 	
 	//Criar os objetos PreMatricula, Aluno, Disciplina

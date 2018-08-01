@@ -9,6 +9,6 @@ import springboot.model.PreMatricula;
 
 @Repository
 @Transactional
-public interface PreMatriculaRepository extends JpaRepository<PreMatricula, Long>{
+public interface PreMatriculaRepository extends JpaRepository<PreMatricula, String>{
 
 }
