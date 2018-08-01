@@ -1,0 +1,80 @@
+<div class="page-header">
+
+
+    <div id="status-matricula">
+
+        <div class="badge badge-primary status">
+            Créditos Selecionados:
+            <span class="badge badge-light"> {{numero_creditos}} </span>
+
+        </div>
+
+        <div class="badge badge-primary status">
+            Status da Matrícula:
+            <span ng-switch="isMatriculaValida">
+                <span ng-switch-when="true" class="badge badge-success">Válida</span>
+                <span ng-switch-when="false" class="badge badge-danger">Inválida</span>
+            </span>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        {{Disciplines_Added}}
+
+
+    </div>
+
+    <div class="container">
+        <div ng-repeat="discipline in Disciplines">
+            <div ng-class="[discipline.grade]">
+                <ul>
+
+                    <li>
+                        <h1 class="nome-titulo">
+                            Nome:
+                            <span class="nome">{{discipline.nome | uppercase}}</span>
+                        </h1>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <h3 class="codigo-titulo">Código:
+                            <span class="codigo"></span> #{{discipline.codigo}}</span>
+                        </h3>
+                    </li>
+                    <li>
+                        <h3 class="creditos-titulo">Créditos:
+                            <span class="creditos"></span>{{discipline.creditos}}</span>
+                        </h3>
+                    </li>
+                    <li>
+                        <h3 class="carga-horaria-titulo">Carga Horária:
+                            <span class="carga_horaria"> {{discipline.carga_horaria}}</span>
+                        </h3>
+                    </li>
+                    <li>
+                        <h3 class="grade-titulo">Grade:
+                            <span class="grade"></span>{{discipline.grade | uppercase}}</span>
+                        </h3>
+                    </li>
+
+                </ul>
+                <span ng-switch="isAdded(discipline)">
+                        <button ng-switch-when="false" type="button" class="btn btn-success btn-sm"  ng-click="addDiscipline(discipline)">Escolher</button>
+                        <button ng-switch-when="true" type="button" class="btn btn-danger btn-sm" ng-click="removeDiscipline(discipline)">Remover</button>
+                    </span>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>

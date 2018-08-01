@@ -1,7 +1,8 @@
 angular.module('app')
     .controller('SignUpController',  function($scope, $location,AuthService)
     {
-        
+        $scope.numeroMatricula = "";
+     
 
         $scope.sendSignUp = function() {
 
@@ -9,8 +10,8 @@ angular.module('app')
           }
 
             $scope.validaMatricula = function() {
-                matricula = $scope.numeroMatricula;
-                return !isNaN(matricula);  
+               
+                return !isNaN($scope.numeroMatricula);  
             }
       
 
