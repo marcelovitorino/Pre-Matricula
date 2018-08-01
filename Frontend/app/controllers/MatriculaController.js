@@ -20,7 +20,7 @@ angular.module('app')
     }
 
     $scope.removeDiscipline = function(discipline){
-     index = $scope.Disciplines_Added.indexOf(discipline);
+     index = getIndexDisciplina(discipline);
      if(index >= 0) $scope.Disciplines_Added.splice(index);
      updateCreditos();
     }
@@ -34,6 +34,15 @@ angular.module('app')
 
     $scope.isAdded = function(discipline){
       return checkSameDisciplina(discipline);
+    }
+
+
+    function getIndexDisciplina(discipline){
+      for(i = 0; i < $scope.Disciplines_Added.length; i++ ){
+        disciplina = $scope.Disciplines_Added[i];
+        if(discipline.codigo == disciplina.codigo) return i;
+
+      } return -1;
     }
 
     function checkSameDisciplina(discipline){

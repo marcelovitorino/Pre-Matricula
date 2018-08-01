@@ -17,14 +17,14 @@ angular.module('app')
 
      bd = {
       nome : "b1",
-      codigo : 1234,
+      codigo : 12345,
       numCreditos : 4,
       cargaHoraria : 30,
       ppc : "nova"
       };
       bd1 = {
         nome : "b2",
-        codigo : 1234,
+        codigo : 12346,
         numCreditos : 4,
         cargaHoraria : 30,
         ppc : "nova"
@@ -32,7 +32,7 @@ angular.module('app')
 
       bd2 = {
         nome : "b3",
-        codigo : 1234,
+        codigo : 12347,
         numCreditos : 4,
         cargaHoraria : 30,
         ppc : "nova"
@@ -60,21 +60,21 @@ angular.module('app')
       };
      bd = {
       nome : "b1",
-      codigo : 1234,
+      codigo : 12345,
       numCreditos : 4,
       cargaHoraria : 30,
       ppc : "nova"
       };
       bd1 = {
         nome : "b2",
-        codigo : 1234,
+        codigo : 12346,
         numCreditos : 4,
         cargaHoraria : 30,
         ppc : "nova"
       };
       bd2 = {
         nome : "b3",
-        codigo : 1234,
+        codigo : 12347,
         numCreditos : 4,
         cargaHoraria : 30,
         ppc : "nova"
