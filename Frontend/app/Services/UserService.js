@@ -1,5 +1,5 @@
 angular.module('app')
-  .factory('UserService', function($rootScope,AuthService) {
+  .factory('UserService', function($localStorage,$rootScope,AuthService) {
    const service = {};
 
   
