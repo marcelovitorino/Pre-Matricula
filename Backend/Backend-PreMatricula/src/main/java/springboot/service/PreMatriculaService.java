@@ -45,7 +45,6 @@ public class PreMatriculaService {
 		PreMatricula novaPreMatricula = optPreMatricula.get();
 		novaPreMatricula.setEmail(preMatricula.getEmail());
 		novaPreMatricula.setDisciplina(preMatricula.getDisciplina());
-		//novaPreMatricula.setCodigo(preMatricula.getCodigo());
 
 		preMatriculaRepository.save(novaPreMatricula);
 

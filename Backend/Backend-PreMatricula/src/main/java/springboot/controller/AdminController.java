@@ -20,8 +20,6 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 	
-	private CSVGenerate csvGenerate;
-
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public List<Admin> getAdminEmail() {
 		return adminService.getAll();
@@ -31,12 +29,5 @@ public class AdminController {
 	public Admin save(@RequestBody Admin admin) {
 		return adminService.save(admin);
 	}
-	
-	
-	@RequestMapping(value = "/admin/csv", method = RequestMethod.GET)
-	public void getCSVPreMatricula() {
-		csvGenerate.getCSVPreMatricula();
-	}
-	
 
 }
