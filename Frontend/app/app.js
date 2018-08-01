@@ -44,6 +44,14 @@ app.config(function($routeProvider, $locationProvider) {
         requireRegistered:true
       
     })
+
+    .when('/matricula', {
+      templateUrl: 'app/views/Matricula.html',
+      controller: 'MatriculaController',
+      requireAuth: true,
+      requireRegistered:true
+    
+  })
       .otherwise({
         redirectTo: '/dashboard'
       });
