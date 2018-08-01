@@ -18,8 +18,10 @@
         </div>
     </div>
 
-    <div class = "container">  <button ng-disabled="!isMatriculaValida" ng-ctype="button" class="btn btn-success btn-sm" ng-click="addDiscipline(discipline)">Submeter Pré-Matrícula</button>
+    <div class = "container">  
+        <button ng-disabled="!isMatriculaValida" ng-ctype="button" class="btn btn-success btn-sm" ng-click="addDiscipline(discipline)">Submeter Pré-Matrícula</button>
         <input type="text" ng-model = "search" class="form-control badge-light" id="inputText" placeholder="Filtrar"></div>
+        <div id = "legenda">Legenda Grade: <span id = "Nova">Grade Nova</span> <span id = "Antiga">Grade Antiga</span> <span id = "Ambas">Ambas</span>  </div>
 
 
 
@@ -31,31 +33,31 @@
                     <ul>
 
                         <li>
-                            <h1 class="nome-titulo">
+                            <h3 class="nome-titulo">
                                 Nome:
                                 <span class="nome">{{discipline.nome | uppercase}}</span>
-                            </h1>
+                            </h3>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <h3 class="codigo-titulo">Código:
+                            <h4 class="codigo-titulo">Código:
                                 <span class="codigo"></span> #{{discipline.codigo}}</span>
-                            </h3>
+                            </h4>
                         </li>
                         <li>
-                            <h3 class="creditos-titulo">Créditos:
+                            <h4 class="creditos-titulo">Créditos:
                                 <span class="creditos"></span>{{discipline.numCreditos}}</span>
-                            </h3>
+                            </h4>
                         </li>
                         <li>
-                            <h3 class="carga-horaria-titulo">Carga Horária:
+                            <h4 class="carga-horaria-titulo">Carga Horária:
                                 <span class="carga_horaria"> {{discipline.cargaHoraria}}</span>
-                            </h3>
+                            </h4>
                         </li>
                         <li>
-                            <h3 class="grade-titulo">Grade:
+                            <h4 class="grade-titulo">Grade:
                                 <span class="grade"></span>{{discipline.ppc | uppercase}}</span>
-                            </h3>
+                            </h4>
                         </li>
 
                     </ul>

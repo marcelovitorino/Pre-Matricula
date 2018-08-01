@@ -96,3 +96,24 @@
     height: 40px;
 }
 
+
+#legenda{
+    font-family: 'Oswald', sans-serif;
+}
+
+#Nova{
+    padding: 4px 4px 4px 4px;
+    background: lightblue;
+
+}
+
+#Antiga{
+    padding: 4px 4px 4px 4px;
+    background: lightslategray;
+
+}
+#Ambas{
+    padding: 4px 4px 4px 4px;
+    background: snow;
+
+}
