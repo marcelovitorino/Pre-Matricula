@@ -1,74 +1,73 @@
 package springboot.model;
-
+ 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
+ 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+ 
 @Entity
-@Table(name = "preMatricula")
-public class PreMatricula implements Serializable {
-	
-	private static final long serialVersionUID = 8351453666214520260L;
-
-	@Id
-	@Column(nullable = false)
-	private String alunoEmail;
-	
-	//@OneToMany
-	//@JoinTable(name = "preMatricula_Disciplina", 
-	//joinColumns = @JoinColumn(name = "preMatricula_id", referencedColumnName = "id"),
-	//inverseJoinColumns = @JoinColumn(name = "Disciplina_id", referencedColumnName = "id"))
-	@OneToMany //---------------OneToMany ou ManyToMany????
-	@JoinColumn(name = "disciplinaCodigos")
-	private Set<Disciplina> disciplinasCodigos;
-
-	public PreMatricula() {//Mudei isso
-		super();
-		this.disciplinasCodigos = new HashSet<Disciplina>();
-	}
-	
-	public PreMatricula(HashSet<Disciplina> disciplinas, String alunoEmail){// e se puder inicializar sem mandar as disciplinas?
-		super();
-		this.disciplinasCodigos = disciplinas;
-		this.alunoEmail = alunoEmail;
-	}
-
-	public Set<Disciplina> getDisciplinas() {
-		return disciplinasCodigos;
-	}
-
-	public void setDisciplinas(Set<Disciplina> disciplinas) {
-		this.disciplinasCodigos = disciplinas;
-	}
-	
-	/*//Isso vai ser função do controlador de disciplinas
-	public int qtdCreditos(){
-		int creditos = 0;
-		for(Disciplina disciplina : disciplinasCodigos){
-			creditos += disciplina.getNumCreditos();
-		}
-		return creditos;	
-	}*/
-	
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-
-	@OneToOne(mappedBy = "preMatricula")
-	public String getAluno(){
-		return alunoEmail;
-	}
-	
-	public void setAluno(String alunoEmail){
-		this.alunoEmail = alunoEmail;
-	}
+@Table(name = "PreMatricula")
+public class PreMatricula implements Serializable{
+ 
+    private static final long serialVersionUID = -6603382401958426451L;
+ 
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//@Column(nullable = false)
+    private Long id;
+ 
+    public Long getId() {
+        return id;
+    }
+ 
+    public void setId(Long id) {
+        this.id = id;
+    }
+ 
+    @Column(nullable = false)
+    private String email;
+   
+    @Column(nullable = false)
+    private Disciplina disciplina;
+   
+   
+    public PreMatricula(){
+       
+    }
+   
+    public PreMatricula(String email, Disciplina disciplina) {
+        super();
+        this.email = email;
+        this.disciplina = disciplina;
+    }
+   
+   
+    public String getEmail() {
+        return email;
+    }
+ 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+ 
+    @OneToOne
+    @JoinColumn(name = "PremDisciplina")
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+ 
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
+ 
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+ 
 }

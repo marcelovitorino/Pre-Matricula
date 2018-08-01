@@ -19,7 +19,7 @@ import springboot.service.PreMatriculaService;
 @RequestMapping(value = "/api")
 @CrossOrigin(origins = "*")
 public class PreMatriculaController {
-
+	
 	@Autowired
 	PreMatriculaService preMatriculaService;
 
@@ -32,24 +32,22 @@ public class PreMatriculaController {
 	public PreMatricula save(@RequestBody PreMatricula preMatricula) {
 		return preMatriculaService.save(preMatricula);
 	}
-	/*
-	 * Não acho que precisa.
-	 * 
-	 * @RequestMapping(value = "/prematricula/{id}", method = RequestMethod.GET)
-	 * public PreMatricula getById(@PathVariable("id") String alunoEmail) { return
-	 * preMatriculaService.getById(alunoEmail); }
-	 */
+
+	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.GET)
+	public PreMatricula getByCodigo(@PathVariable("id") Long id) {
+		return preMatriculaService.getById(id);
+	}
 
 	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<PreMatricula> update(@PathVariable("id") String alunoEmail,
+	public ResponseEntity<PreMatricula> update(@PathVariable("id") Long id,
 			@RequestBody PreMatricula preMatricula) {
-		PreMatricula updatedPreMatricula = preMatriculaService.update(preMatricula, alunoEmail);
+		PreMatricula updatedPreMatricula = preMatriculaService.update(preMatricula, id);
 		return new ResponseEntity<PreMatricula>(updatedPreMatricula, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<PreMatricula> delete(@PathVariable("id") String emailAluno) {
-		PreMatricula preMatricula = preMatriculaService.delete(emailAluno);
+	public ResponseEntity<PreMatricula> delete(@PathVariable("id") Long id) {
+		PreMatricula preMatricula = preMatriculaService.delete(id);
 		return new ResponseEntity<PreMatricula>(preMatricula, HttpStatus.OK);
 	}
 

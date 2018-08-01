@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import springboot.exception.RegisterNotFoundException;
+import springboot.model.Disciplina;
 import springboot.model.PreMatricula;
 import springboot.repository.PreMatriculaRepository;
 
@@ -20,11 +21,11 @@ public class PreMatriculaService {
 		return preMatriculaRepository.findAll();
 	}
 
-	public PreMatricula getById(String alunoEmail) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(alunoEmail);
+	public PreMatricula getById(Long id) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
 
 		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException("Pre-matricula não encontrada.");
+			throw new RegisterNotFoundException("PreMatricula não está cadastrada.");
 		}
 
 		return optPreMatricula.get();
@@ -35,26 +36,28 @@ public class PreMatriculaService {
 		return preMatricula;
 	}
 
-	public PreMatricula update(PreMatricula preMatricula, String alunoEmail) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(alunoEmail);
+	public PreMatricula update(PreMatricula preMatricula, Long id) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
 
 		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException("Pre-matricula não encontrada. Verificar se o id está correto");
+			throw new RegisterNotFoundException("Pre-matricula não está cadastrada.");
 		}
 
 		PreMatricula novaPreMatricula = optPreMatricula.get();
-		novaPreMatricula.setDisciplinas(preMatricula.getDisciplinas());
+		novaPreMatricula.setEmail(preMatricula.getEmail());
+		novaPreMatricula.setDisciplina(preMatricula.getDisciplina());
+		//novaPreMatricula.setCodigo(preMatricula.getCodigo());
 
 		preMatriculaRepository.save(novaPreMatricula);
 
 		return novaPreMatricula;
 	}
 
-	public PreMatricula delete(String alunoEmail) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(alunoEmail);
+	public PreMatricula delete(Long id) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
 
 		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException("Pre-matricula não encontrada. Verificar se o id está correto");
+			throw new RegisterNotFoundException("Pre-matricula não está cadastrada.");
 		}
 
 		PreMatricula preMatricula = optPreMatricula.get();
@@ -62,5 +65,6 @@ public class PreMatriculaService {
 
 		return preMatricula;
 	}
+
 
 }
