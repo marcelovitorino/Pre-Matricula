@@ -5,47 +5,74 @@
     font-size: 23px;
 }
 
-.discipline{
+.nova{
     margin: 4px 4px 4px 4px;
-    background:lightgrey;
+    background: lightblue;
     border-radius: 5px;
-    border: 3px solid grey;
+    border: 1px solid  darkslategrey;
     list-style: none;
 
 }
 
-.discipline ul li{
+.nova ul li{
+    list-style: none;
+}
+
+.velha{
+    margin: 4px 4px 4px 4px;
+    background:lightslategray;
+    border-radius: 5px;
+    border: 1px solid lightcyan;
+    list-style: none;
+
+}
+
+.velha ul li{
+    list-style: none;
+}
+
+.ambas{
+    margin: 4px 4px 4px 4px;
+    background:snow;
+    border-radius: 5px;
+    border: 1px solid navajowhite;
+    list-style: none;
+
+}
+
+.ambas ul li{
     list-style: none;
 }
 
 .nome-titulo{
     color:white;
     margin-left:3%;
-    margin-top:3%;
+    margin-top: 2%;
+
     font-family: 'Oswald', sans-serif;
     text-align: left;
 }
 .codigo-titulo{
     margin-left:3%;
-    margin-top:3%;
+
     font-family: 'Oswald', sans-serif;
     text-align: left;
 }
 .creditos-titulo{
     margin-left:3%;
-    margin-top:3%;
+
     font-family: 'Oswald', sans-serif;
     text-align: left;
 }
 .carga-horaria-titulo{
     margin-left:3%;
-    margin-top:3%;
+
     font-family: 'Oswald', sans-serif;
     text-align: left;
 }
 .grade-titulo{
     margin-left:3%;
-    margin-top:3%;
+
     font-family: 'Oswald', sans-serif;
     text-align: left;
 }
@@ -55,7 +82,11 @@
 }
 
 
-.discipline button{
+.nova button{
+    width: 90%;
+    height: 40px;
+}
+.velha button{
     width: 90%;
     height: 40px;
 }

@@ -19,14 +19,14 @@ angular.module('app')
         codigo : 1234,
         creditos : 4,
         carga_horaria : 30,
-        grade : "nova"
+        grade : "ambas"
       };
       bd1 = {
         nome : "bd1",
         codigo : 1234,
         creditos : 8,
         carga_horaria : 30,
-        grade : "nova"
+        grade : "velha"
       };
       bd2 = {
         nome : "bd2",
