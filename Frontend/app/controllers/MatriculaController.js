@@ -3,7 +3,7 @@ angular.module('app')
 
     $rootScope.activetab = $location.path();
 
-    $scope.isMatriculaValida = true;
+    $scope.isMatriculaValida = false;
     $scope.numero_creditos = 0;
     $scope.Disciplines = CourseService.getDisciplines();
     $scope.Disciplines_Added = [];
@@ -22,7 +22,7 @@ angular.module('app')
     }
 
     function update_matricula_valida(){
-      if($scope.numero_creditos > 24) 
+      if($scope.numero_creditos > 24 || $scope.numero_creditos < 12) 
       $scope.isMatriculaValida = false; 
       else 
       $scope.isMatriculaValida = true;
@@ -30,6 +30,15 @@ angular.module('app')
 
     $scope.isAdded = function(discipline){
       return $scope.Disciplines_Added.includes(discipline);
+    }
+
+
+    $scope.submitMatricula = function(){
+
+      preMatricula = 
+      {
+        "email" : UserService.getMatricula(),
+          "disciplina" :  $scope.Disciplines_Added }  
     }
 
     function updateCreditos(){

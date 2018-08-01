@@ -10,30 +10,30 @@ angular.module('app')
       psoft = {
         nome : "psoft",
         codigo : 1234,
-        creditos : 4,
-        carga_horaria : 30,
-        grade : "nova"
+        numCreditos : 4,
+        cargaHoraria : 30,
+        ppc : "nova"
       };
      bd = {
-        nome : "bd",
-        codigo : 1234,
-        creditos : 4,
-        carga_horaria : 30,
-        grade : "ambas"
+      nome : "b1",
+      codigo : 1234,
+      numCreditos : 4,
+      cargaHoraria : 30,
+      ppc : "nova"
       };
       bd1 = {
-        nome : "bd1",
+        nome : "b2",
         codigo : 1234,
-        creditos : 8,
-        carga_horaria : 30,
-        grade : "velha"
+        numCreditos : 4,
+        cargaHoraria : 30,
+        ppc : "nova"
       };
       bd2 = {
-        nome : "bd2",
+        nome : "b3",
         codigo : 1234,
-        creditos : 10,
-        carga_horaria : 30,
-        grade : "nova"
+        numCreditos : 4,
+        cargaHoraria : 30,
+        ppc : "nova"
       };
 
       disciplines.push(psoft);
