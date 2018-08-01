@@ -72,4 +72,8 @@ public class AlunoService {
 	public List<Aluno> pesquisarPorEmail(String email) {
 		return alunoRepository.pesquisarPorEmail(email);
 	}
+	
+	public List<Aluno> pesquisarPorMatricula(String matricula) {
+		return alunoRepository.pesquisarPorMatricula(matricula);
+	}
 }

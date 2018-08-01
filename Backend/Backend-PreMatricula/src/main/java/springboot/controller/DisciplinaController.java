@@ -52,7 +52,7 @@ public class DisciplinaController {
 	}
 
 	@RequestMapping(value = "/disciplina/search/{disciplina}", method = RequestMethod.GET)
-	public List<Disciplina> searchByNome(@PathVariable("disciplina") String disciplina) {
+	public List<Disciplina> searchByName(@PathVariable("disciplina") String disciplina) {
 		return disciplinaService.pesquisarPorNome(disciplina);
 	}
 

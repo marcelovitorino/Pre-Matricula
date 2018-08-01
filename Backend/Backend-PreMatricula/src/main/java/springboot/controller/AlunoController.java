@@ -51,9 +51,9 @@ public class AlunoController {
 	}
 
 	
-	@RequestMapping(value = "/aluno/search/{nome}", method = RequestMethod.GET)
-	public List<Aluno> searchByNome(@PathVariable("nome") String nome) {
-		return alunoService.pesquisarPorEmail(nome);
+	@RequestMapping(value = "/aluno/search/{matricula}", method = RequestMethod.GET)
+	public List<Aluno> searchByMatricula(@PathVariable("matricula") String matricula) {
+		return alunoService.pesquisarPorMatricula(matricula);
 	}
 
 }
