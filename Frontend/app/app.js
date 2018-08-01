@@ -52,8 +52,19 @@ app.config(function($routeProvider, $locationProvider) {
       requireRegistered:true
     
   })
+
+  
+  .when('/disciplinascadastradas', {
+    templateUrl: 'app/views/DisciplinasCadastradas.html',
+    controller: 'DisciplinasCadastradasController',
+    requireAuth: true,
+    requireRegistered:true,
+    requireSuperUser: true
+
+  
+})
       .otherwise({
-        redirectTo: '/dashboard'
+        redirectTo: '/instrunctions'
       });
 
     });
