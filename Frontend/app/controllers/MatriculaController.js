@@ -7,6 +7,7 @@ angular.module('app')
     $scope.numero_creditos = 0;
     $scope.Disciplines = CourseService.getDisciplines();
     $scope.Disciplines_Added = [];
+    $scope.search = "";
 
     $scope.addDiscipline = function(discipline){
       if(!$scope.Disciplines_Added.includes(discipline))
