@@ -23,7 +23,8 @@ app.config(function($routeProvider, $locationProvider) {
       .when('/signup', {	
         templateUrl: 'app/views/SignUp.html',	
         controller: 'SignUpController',
-        requireAuth: true
+        requireAuth: true,
+        requireNotRegistered: true
     })	
      .when('/instructions', {	
       templateUrl: 'app/views/Instructions.html',	

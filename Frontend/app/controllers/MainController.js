@@ -19,6 +19,9 @@ angular.module('app')
             else if (newUrl.requireRegistered && !UserService.isRegistered()) {
                 $location.path("/signup");
             }
+            else if (newUrl. requireNotRegistered && UserService.isRegistered()){
+                $location.path("/dashboard");
+            }
 
             else if (newUrl.requireSuperUser && !UserService.isCordinator()) {
                 $location.path("/dashboard");
