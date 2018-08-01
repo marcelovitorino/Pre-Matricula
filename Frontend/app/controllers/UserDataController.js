@@ -1,12 +1,22 @@
 angular.module('app')
-    .controller('UserDataController',  function($rootScope, $location,AuthService)
+    .controller('UserDataController',  function($scope,$rootScope, $location,AuthService,UserService)
     {
+
+     
        $rootScope.activetab = $location.path();
        $rootScope.user_email = AuthService.getUserDetails().email;
-       $rootScope.matricula_usuario = 11210403;
+       $scope.matricula_usuario = UserService.getMatricula();
+       $scope.curso = UserService.getCurso();
+  
+     
+       $scope.send = function send(){
+        
+       }
 
-       $rootScope.send = function send(){
-           console.log('mandou');
+
+       $scope.validaMatricula = function(){
+           matricula = $scope.matricula_usuario;        
+           return !isNaN(matricula);
        }
      
 

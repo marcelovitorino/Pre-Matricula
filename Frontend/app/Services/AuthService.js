@@ -15,21 +15,6 @@ angular.module('app')
       $localStorage.$reset();
     },
 
-    service.isRegistered = function (){
-      return true;
-    }
-
-    service.isCordinator = function (){
-      return true;
-    }
-
-
-
-    service.isCCC = function(){
-      email = $localStorage.UserDetails.email.split("@");
-      return email[1] == "ccc.ufcg.edu.br";
-
-    }
 
     service.isLogged = function(){ return $localStorage.UserDetails !== undefined};
 

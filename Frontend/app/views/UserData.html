@@ -22,17 +22,20 @@
 
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row"  ng-class="{ 'has-error' : myDataForm.matricula.$invalid}">
                 <label for="inputText" class="col-sm-2 col-form-label" >Matrícula:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="matricula" value={{matricula_usuario}}>
+                    <input name="matricula" type="text" class="form-control" id="matricula" ng-model="matricula_usuario" ng-minlength="8" ng-maxlength="8" >
+                    <p ng-show="myDataForm.matricula.$error.minlength" class="help-block">Matrícula curta demais. 8 digítos são desejados</p>
+                     <p ng-show="myDataForm.matricula.$error.maxlength" class="help-block">Matrícula longa demais. 8 digítos são desejados</p>
+                    
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="form-control" class="col-sm-2 col-form-label">Curso:</label>
                 <div class="col-sm-10">
-                    <select class="form-control">
+                    <select class="form-control" ng-model="curso">
                         <option>PPC 1999 - Curso Antigo</option>
                         <option>PPC 08/2017 - Curso Novo</option>
                     </select>
@@ -41,7 +44,7 @@
 
             <div class="form-group">
               
-                    <button type="submit" class="btn btn-default">Atualizar</button>
+                    <button type="submit" class="btn btn-default" ng-disabled="myDataForm.$invalid || !validaMatricula()" >Atualizar</button>
               
             </div>
 

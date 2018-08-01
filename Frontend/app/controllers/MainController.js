@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('MainController', function ($rootScope, $location, AuthService, ProfileService, $window, $localStorage) {
+    .controller('MainController', function ($rootScope, $location,UserService, AuthService, ProfileService, $window, $localStorage) {
         $rootScope.activetab = $location.path();
 
 
@@ -16,18 +16,18 @@ angular.module('app')
             if (newUrl.requireAuth && !AuthService.isLogged()) {
                 $location.path("/login");
             }
-            else if (newUrl.requireRegistered && !AuthService.isRegistered()) {
+            else if (newUrl.requireRegistered && !UserService.isRegistered()) {
                 $location.path("/signup");
             }
 
-            else if (newUrl.requireSuperUser && !AuthService.isCordinator()) {
+            else if (newUrl.requireSuperUser && !UserService.isCordinator()) {
                 $location.path("/dashboard");
             }
         });
 
         $rootScope.$on('event:social-sign-in-success', function (event, userDetails) {
             AuthService.setUserDetails(userDetails);
-            if (AuthService.isCCC()) {
+            if (UserService.isCCC()) {
                 $rootScope.isCCC = true;
                 $rootScope.isLogged = true;
                 ProfileService.update_user_profile();
