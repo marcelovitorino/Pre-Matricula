@@ -1,7 +1,18 @@
 angular.module('app')
-  .factory('CourseService', function($rootScope,AuthService) {
+  .factory('CourseService', function($rootScope,UserService,$http) {
 
     const service = {};
+
+
+    service.getDisciplinasMatriculadas = function(){
+      
+      $http.get("/api/prematricula/" + UserService.getEmail())
+      .then(function(response) {
+          $scope.data = response.data;
+
+      return disciplines;
+
+    },
 
     service.getDisciplines = function(){
       
@@ -10,30 +21,30 @@ angular.module('app')
       psoft = {
         nome : "psoft",
         codigo : 1234,
-        creditos : 4,
-        carga_horaria : 30,
-        grade : "nova"
+        numCreditos : 4,
+        cargaHoraria : 30,
+        ppc : "nova"
       };
      bd = {
-        nome : "bd",
-        codigo : 1234,
-        creditos : 4,
-        carga_horaria : 30,
-        grade : "ambas"
+      nome : "b1",
+      codigo : 12345,
+      numCreditos : 4,
+      cargaHoraria : 30,
+      ppc : "nova"
       };
       bd1 = {
-        nome : "bd1",
-        codigo : 1234,
-        creditos : 8,
-        carga_horaria : 30,
-        grade : "velha"
+        nome : "b2",
+        codigo : 12346,
+        numCreditos : 4,
+        cargaHoraria : 30,
+        ppc : "nova"
       };
       bd2 = {
-        nome : "bd2",
-        codigo : 1234,
-        creditos : 10,
-        carga_horaria : 30,
-        grade : "nova"
+        nome : "b3",
+        codigo : 12347,
+        numCreditos : 4,
+        cargaHoraria : 30,
+        ppc : "nova"
       };
 
       disciplines.push(psoft);
@@ -42,9 +53,12 @@ angular.module('app')
       disciplines.push(bd2);
 
       return disciplines;
-    }
-
-    return service;
+    
 
 
-  });
+
+
+  }
+
+
+    }  return service;});

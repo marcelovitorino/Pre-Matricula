@@ -19,8 +19,15 @@ angular.module('app')
       return "PPC 08/2017 - Curso Novo";
   }
 
-  
+  service.getEmail = function() {
+    return AuthService.getUserDetails().email;
+  }
 
+  service.getName = function() {
+    return AuthService.getUserDetails().name;
+  }
+
+  
 
 
   service.isCCC = function(){

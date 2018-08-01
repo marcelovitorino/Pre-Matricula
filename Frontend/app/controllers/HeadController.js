@@ -4,6 +4,7 @@ angular.module('app')
     
     $rootScope.activetab = $location.path();
 
+
     $rootScope.logout = function(){
         AuthService.logout();
     }

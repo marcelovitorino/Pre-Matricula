@@ -5,6 +5,8 @@ angular.module('app')
 
         $rootScope.isLogged = AuthService.isLogged();
 
+        $rootScope.user_type = "cordinator";
+
         if ($rootScope.isLogged) {
             ProfileService.update_user_profile();
         }

@@ -45,7 +45,7 @@
 }
 
 .nome-titulo{
-    color:white;
+    
     margin-left:3%;
     margin-top: 2%;
 
@@ -89,4 +89,35 @@
 .velha button{
     width: 90%;
     height: 40px;
+}
+
+.ambas button{
+    width: 90%;
+    height: 40px;
+}
+
+
+#legenda{
+    font-family: 'Oswald', sans-serif;
+}
+
+.Nova{
+    padding: 4px 4px 4px 4px;
+    background: lightblue;
+
+}
+
+.Antiga{
+    padding: 4px 4px 4px 4px;
+    background: lightslategray;
+}
+
+.Ambas{
+    padding: 4px 4px 4px 4px;
+    background: snow;
+
+}
+
+.disciplina{
+    margin-top: 30px;
 }
