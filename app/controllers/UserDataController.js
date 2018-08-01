@@ -2,6 +2,8 @@ angular.module('app')
     .controller('UserDataController',  function($scope,$rootScope, $location,AuthService,UserService)
     {
 
+        
+    if(UserService.isCordinator()) $location.path('/addCourse');
      
        $rootScope.activetab = $location.path();
        $rootScope.user_email = AuthService.getUserDetails().email;

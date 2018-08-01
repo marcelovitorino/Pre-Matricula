@@ -8,7 +8,12 @@ angular.module('app')
   }
 
   service.isCordinator = function (){
-    return true;
+
+    return false;
+    if (AuthService.getUserDetails() === undefined)
+     return false;
+   else   
+   return AuthService.getUserDetails().email == "projsw@ccc.ufcg.edu.br";
   }
 
   service.getMatricula = function(){
