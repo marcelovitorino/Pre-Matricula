@@ -17,6 +17,14 @@ angular.module('app')
     $scope.removeDiscipline = function(discipline){
      index = $scope.Disciplines_Added.indexOf(discipline);
      if(index >= 0) $scope.Disciplines_Added.splice(index);
+     updateCreditos();
+    }
+
+    function update_matricula_valida(){
+      if($scope.numero_creditos > 24) 
+      $scope.isMatriculaValida = false; 
+      else 
+      $scope.isMatriculaValida = true;
     }
 
     $scope.isAdded = function(discipline){
@@ -29,12 +37,8 @@ angular.module('app')
       for(i = 0; i < $scope.Disciplines_Added.length; i++ )
        creditos += $scope.Disciplines_Added[i].creditos;
 
-       if(creditos > 24) 
-       $scope.isMatriculaValida = false; 
-       else 
-       $scope.isMatriculaValida = true;
-
        $scope.numero_creditos = creditos;
+       update_matricula_valida();
       
 
     }

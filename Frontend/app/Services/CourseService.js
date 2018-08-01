@@ -24,7 +24,14 @@ angular.module('app')
       bd1 = {
         nome : "bd1",
         codigo : 1234,
-        creditos : 4,
+        creditos : 8,
+        carga_horaria : 30,
+        grade : "nova"
+      };
+      bd2 = {
+        nome : "bd2",
+        codigo : 1234,
+        creditos : 10,
         carga_horaria : 30,
         grade : "nova"
       };
@@ -32,6 +39,7 @@ angular.module('app')
       disciplines.push(psoft);
       disciplines.push(bd);
       disciplines.push(bd1);
+      disciplines.push(bd2);
 
       return disciplines;
     }
