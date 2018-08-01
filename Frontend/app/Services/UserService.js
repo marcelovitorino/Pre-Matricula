@@ -11,6 +11,14 @@ angular.module('app')
     return true;
   }
 
+  service.getMatricula = function(){
+      return 123;
+  }
+
+  service.getCurso = function(){
+      return "PPC 08/2017 - Curso Novo";
+  }
+
 
 
   service.isCCC = function(){
