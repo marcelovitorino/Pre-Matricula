@@ -34,7 +34,7 @@ public class DisciplinaController {
 	}
 
 	@RequestMapping(value = "/disciplina/{codigo}", method = RequestMethod.GET)
-	public Disciplina getById(@PathVariable("codigo") String codigo) {
+	public Disciplina getByCodigo(@PathVariable("codigo") String codigo) {
 		return disciplinaService.getById(codigo);
 	}
 
@@ -51,9 +51,9 @@ public class DisciplinaController {
 		return new ResponseEntity<Disciplina>(disiciplina, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/disciplina/search/{text}", method = RequestMethod.GET)
-	public List<Disciplina> searchByEmail(@PathVariable("disciplina") String disciplina) {
-		return disciplinaService.pesquisarPorCodigo(disciplina);
+	@RequestMapping(value = "/disciplina/search/{disciplina}", method = RequestMethod.GET)
+	public List<Disciplina> searchByNome(@PathVariable("disciplina") String disciplina) {
+		return disciplinaService.pesquisarPorNome(disciplina);
 	}
 
 }

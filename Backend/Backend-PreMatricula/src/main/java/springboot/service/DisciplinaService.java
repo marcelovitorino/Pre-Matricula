@@ -68,12 +68,8 @@ public class DisciplinaService {
 		return disciplina;
 	}
 	
-	public List<Disciplina> pesquisarPorNome(String nome) {
-		return disciplinaRepository.pesquisarPorNome(nome);
-	}
-	
-	public List<Disciplina> pesquisarPorCodigo(String codigo) {
-		return disciplinaRepository.pesquisarPorCodigo(codigo);
+	public List<Disciplina> pesquisarPorNome(String disciplina) {
+		return disciplinaRepository.pesquisarPorNome(disciplina);
 	}
 
 }

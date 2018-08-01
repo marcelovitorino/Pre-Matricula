@@ -28,24 +28,24 @@ public class PreMatricula implements Serializable {
 	//inverseJoinColumns = @JoinColumn(name = "Disciplina_id", referencedColumnName = "id"))
 	@OneToMany //---------------OneToMany ou ManyToMany????
 	@JoinColumn(name = "disciplinaCodigos")
-	private Set<String> disciplinasCodigos;
+	private Set<Disciplina> disciplinasCodigos;
 
 	public PreMatricula() {//Mudei isso
 		super();
-		this.disciplinasCodigos = new HashSet<String>();
+		this.disciplinasCodigos = new HashSet<Disciplina>();
 	}
 	
-	public PreMatricula(HashSet<String> disciplinas, String alunoEmail){// e se puder inicializar sem mandar as disciplinas?
+	public PreMatricula(HashSet<Disciplina> disciplinas, String alunoEmail){// e se puder inicializar sem mandar as disciplinas?
 		super();
 		this.disciplinasCodigos = disciplinas;
 		this.alunoEmail = alunoEmail;
 	}
 
-	public Set<String> getDisciplinas() {
+	public Set<Disciplina> getDisciplinas() {
 		return disciplinasCodigos;
 	}
 
-	public void setDisciplinas(Set<String> disciplinas) {
+	public void setDisciplinas(Set<Disciplina> disciplinas) {
 		this.disciplinasCodigos = disciplinas;
 	}
 	
