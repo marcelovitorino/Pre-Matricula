@@ -5,7 +5,8 @@ angular.module('app')
 
         $rootScope.isLogged = AuthService.isLogged();
 
-        $rootScope.user_type = "cordinator";
+
+        if(UserService.isCordinator()) $rootScope.user_type = "cordinator"; else $rootScope.user_type = "student";
 
         if ($rootScope.isLogged) {
             ProfileService.update_user_profile();
@@ -26,7 +27,7 @@ angular.module('app')
             }
 
             else if (newUrl.requireSuperUser && !UserService.isCordinator()) {
-                $location.path("/dashboard");
+                $location.path("/matricula");
             }
         });
 
