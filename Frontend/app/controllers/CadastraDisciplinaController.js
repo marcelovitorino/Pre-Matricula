@@ -3,30 +3,16 @@ angular.module('app')
     {
       
             $scope.sendCourse = function() {
-              if (!validaNome()) {
-                  //erro
-                  
-              } else if (!validaCodigoDisciplina()){
-                  // erro
-              } else if (!validaCargaHoraria()) {
-                  // erro
-              }
-              else {
-                  // POST
-              }
+              //POST
             }
 
 
-        function validaNome() {
-            if (isEmpty($scope.nomeDisciplina) || !isNaN($scope.nomeDisciplina)) {
-                return false;
-            }   
+        $scope.validaNome = function() {
+            return (!isEmpty($scope.nomeDisciplina) && isNaN($scope.nomeDisciplina));
         }
 
-        function validaCodigoDisciplina() {
-            if (isEmpty($scope.codigoDisciplina)) {
-                return false;
-            }   
+        $scope.validaCodigoDisciplina = function() {
+            return (!isEmpty($scope.codigoDisciplina));
         }
 
 
