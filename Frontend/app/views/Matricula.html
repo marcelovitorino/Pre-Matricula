@@ -32,12 +32,6 @@
             <div class="discipline">
                 <ul>
 
-
-                    <span ng-switch="isAdded(discipline)">
-                        <button ng-switch-when="false" type="button" class="btn btn-success" ng-click="addDiscipline(discipline)">Escolher</button>
-                        <button ng-switch-when="true" type="button" class="btn btn-danger" ng-click="removeDiscipline(discipline)">Remover</button>
-                    </span>
-
                     <li>
                         <h1 class="nome-titulo">
                             Nome:
@@ -67,6 +61,10 @@
                     </li>
 
                 </ul>
+                <span ng-switch="isAdded(discipline)">
+                        <button ng-switch-when="false" type="button" class="btn btn-success btn-sm"  ng-click="addDiscipline(discipline)">Escolher</button>
+                        <button ng-switch-when="true" type="button" class="btn btn-danger btn-sm" ng-click="removeDiscipline(discipline)">Remover</button>
+                    </span>
 
 
             </div>

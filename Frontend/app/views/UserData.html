@@ -25,9 +25,9 @@
             <div class="form-group row"  ng-class="{ 'has-error' : myDataForm.matricula.$invalid}">
                 <label for="inputText" class="col-sm-2 col-form-label" >Matrícula:</label>
                 <div class="col-sm-10">
-                    <input name="matricula" type="text" class="form-control" id="matricula" ng-model="matricula_usuario" ng-minlength="8" ng-maxlength="8" >
-                    <p ng-show="myDataForm.matricula.$error.minlength" class="help-block">Matrícula curta demais. 8 digítos são desejados</p>
-                     <p ng-show="myDataForm.matricula.$error.maxlength" class="help-block">Matrícula longa demais. 8 digítos são desejados</p>
+                    <input name="matricula" type="text" class="form-control" id="matricula" ng-model="matricula_usuario" ng-minlength="9" ng-maxlength="9" >
+                    <p ng-show="myDataForm.matricula.$error.minlength" class="help-block">Matrícula curta demais. 9 digítos são desejados</p>
+                     <p ng-show="myDataForm.matricula.$error.maxlength" class="help-block">Matrícula longa demais. 9 digítos são desejados</p>
                     
                 </div>
             </div>
