@@ -35,7 +35,7 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="HeadController">
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" ng-class="{active: activetab == '/matricula'}"><a class="nav-link" href="/matricula">Pré Matricula</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/instructions'}"><a class="nav-link" href="/instructions">Instruções</a></li>
+  <li class="nav-item" ng-class="{active: activetab == '/instructions'}"><a class="nav-link" href="https://docs.google.com/document/d/1xDl6HnSt1t4Xgg-0qtC_ESXOAU1zjFizUQXKrRSaxAM/edit">Instruções</a></li>
   
 </ul>
 <div class="nav-item dropdown">
@@ -71,7 +71,7 @@
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" ng-class="{active: activetab == '/addCourse'}"><a class="nav-link" href="/addCourse">Cadastrar Disciplina</a></li>
   <li class="nav-item" ng-class="{active: activetab == '/disciplinascadastradas'}"><a class="nav-link" href="/disciplinascadastradas">Visualizar Disciplinas</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/disciplinascadastradas'}"><a class="nav-link" href="/disciplinascadastradas">Exportar CSV</a></li>
+  <li class="nav-item" ng-class="{active: activetab == '/dk'}"><a class="nav-link" href="/disciplinascadastradas">Exportar CSV</a></li>
 </ul>
 <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -103,6 +103,7 @@
 <!-- Angular JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
     
 <!-- Dependências do BootStrap -->   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
@@ -121,10 +122,8 @@
 <script src="app/controllers/MainController.js"></script>
 <script src="app/controllers/HeadController.js"></script>
 <script src="app/controllers/LoginController.js"></script>
-<script src="app/controllers/DashboardController.js"></script>
 <script src="app/controllers/UserDataController.js"> </script>
 <script src="app/controllers/SignUpController.js"> </script>
-<script src="app/controllers/InstructionsController.js"> </script>
 <script src="app/controllers/CadastraDisciplinaController.js"></script>
 <script src= "app/controllers/MatriculaController.js"></script>
 <script src = "app/controllers/CadastraDisciplinaController.js"></script>
@@ -136,5 +135,8 @@
 <!--Plugins-->
 <script src="app/bower_components/angularjs-social-login/angularjs-social-login.js"></script>
 <script src="app/bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.2/angular-sanitize.min.js"></script>
+
+
 </body>
 </html>

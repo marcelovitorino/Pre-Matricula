@@ -7,14 +7,6 @@ app.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
 
-    .when('/dashboard', {
-      templateUrl: 'app/views/Dashboard.html',
-      controller: 'DashboardController',
-      requireAuth: true,
-      requireRegistered: true,
-      
-     
-    })
       .when('/login', {
           templateUrl: 'app/views/Login.html',
           controller: 'LoginController'
@@ -26,10 +18,7 @@ app.config(function($routeProvider, $locationProvider) {
         requireAuth: true,
         requireNotRegistered: true
     })	
-     .when('/instructions', {	
-      templateUrl: 'app/views/Instructions.html',	
-      controller: 'InstructionsController'	
-    })
+    
      .when('/addCourse', {	
       templateUrl: 'app/views/CadastraDisciplina.html',	
       controller: 'CadastraDisciplinaController',
@@ -64,7 +53,7 @@ app.config(function($routeProvider, $locationProvider) {
   
 })
       .otherwise({
-        redirectTo: '/instrunctions'
+        redirectTo: '/login'
       });
 
     });

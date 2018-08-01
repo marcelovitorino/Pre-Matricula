@@ -1,7 +1,9 @@
 angular.module('app')
-  .controller('MatriculaController', function ($scope,$rootScope, $location, AuthService, $localStorage,UserService,CourseService) {
+  .controller('MatriculaController', function ($scope,$rootScope, $location,UserService,CourseService) {
 
     $rootScope.activetab = $location.path();
+
+    if(UserService.isCordinator()) $location.path('/addCourse');
 
     $scope.isMatriculaValida = false;
     $scope.numero_creditos = 0;
@@ -11,7 +13,6 @@ angular.module('app')
     updateCreditos();
   
 
-    console.log( $scope.Disciplines_Added);
 
     $scope.addDiscipline = function(discipline){
       if(!$scope.Disciplines_Added.includes(discipline))
@@ -50,7 +51,6 @@ angular.module('app')
       for(i = 0; i < $scope.Disciplines_Added.length; i++ ){
         disciplina = $scope.Disciplines_Added[i];
 
-        console.log(discipline.codigo == disciplina.codigo);
         if(discipline.codigo == disciplina.codigo) return true;
       }
 
