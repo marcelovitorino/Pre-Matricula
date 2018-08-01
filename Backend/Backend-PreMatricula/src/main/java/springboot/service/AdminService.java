@@ -26,5 +26,4 @@ public class AdminService {
 	public List<Admin> pesquisarPorEmail(String email) {
 		return adminRepository.pesquisarPorEmail(email);
 	}
-
 }

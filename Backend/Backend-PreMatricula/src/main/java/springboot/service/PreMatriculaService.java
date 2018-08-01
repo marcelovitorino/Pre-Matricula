@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import springboot.exception.RegisterNotFoundException;
-import springboot.model.Disciplina;
 import springboot.model.PreMatricula;
 import springboot.repository.PreMatriculaRepository;
 
