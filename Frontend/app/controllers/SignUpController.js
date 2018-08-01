@@ -4,19 +4,14 @@ angular.module('app')
         
 
         $scope.sendSignUp = function() {
-                if (!validaMatricula()) {
-                    //erro
-                    
-                } else {
-                    // POST
-                }
+
+             //POST
           }
 
-          function validaMatricula() {
-            if (isNaN($scope.numeroMatricula)) {
-                return false;
-            }   
-        }
+            $scope.validaMatricula = function() {
+                matricula = $scope.numeroMatricula;
+                return !isNaN(matricula);  
+            }
       
 
     });
