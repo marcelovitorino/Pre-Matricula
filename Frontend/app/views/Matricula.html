@@ -1,13 +1,27 @@
 <div class="page-header">
-<div class="container">
 
-    <h1>Example <span class="label label-default">New</span></h1>
-    <h2>Example <span class="label label-default">New</span></h2>
-    <h3>Example <span class="label label-default">New</span></h3>
-    <h4>Example <span class="label label-default">New</span></h4>
-    <h5>Example <span class="label label-default">New</span></h5>
-    <h6>Example <span class="label label-default">New</span></h6>
-</div>
+
+    <div  id="status-matricula">
+       
+        <div class="badge badge-primary status">
+                Créditos Selecionados:
+                <span class="badge badge-light"> {{numero_creditos}} </span>
+         
+        </div>
+
+        <div class="badge badge-primary status">
+         Status da Matrícula:
+            <span ng-switch="isMatriculaValida">
+                <span ng-switch-when="true" class="badge badge-success">Válida</span>
+                <span ng-switch-when="false" class="badge badge-danger">Inválida</span>
+            </span>
+            
+        </div>
+
+
+    </div>
+
+    <div class = "container"></div>
 
 
 
