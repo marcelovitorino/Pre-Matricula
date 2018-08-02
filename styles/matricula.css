@@ -18,7 +18,7 @@
     list-style: none;
 }
 
-.Velha{
+.Antiga{
     margin: 4px 4px 4px 4px;
     background:lightslategray;
     border-radius: 5px;
@@ -27,7 +27,7 @@
 
 }
 
-.Velha ul li{
+.Antiga ul li{
     list-style: none;
 }
 
@@ -86,7 +86,7 @@
     width: 90%;
     height: 40px;
 }
-.Velha button{
+.Antiga button{
     width: 90%;
     height: 40px;
 }

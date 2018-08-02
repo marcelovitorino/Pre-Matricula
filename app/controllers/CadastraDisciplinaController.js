@@ -13,7 +13,7 @@ angular.module('app')
                     codigo: $scope.codigoDisciplina,
                     numCreditos:$scope.numCreditos,
                     cargaHoraria: $scope.cargaHoraria,
-                    tipo: "obrigatorio",
+                    tipo: $scope.tipo,
                     ppc : CourseService.getTipo($scope.cursoEscolhido)
                 };
     
