@@ -71,7 +71,8 @@
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" ng-class="{active: activetab == '/addCourse'}"><a class="nav-link" href="/addCourse">Cadastrar Disciplina</a></li>
   <li class="nav-item" ng-class="{active: activetab == '/disciplinascadastradas'}"><a class="nav-link" href="/disciplinascadastradas">Visualizar Disciplinas</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/dk'}"><a class="nav-link" href="/disciplinascadastradas">Exportar CSV</a></li>
+  <li class="nav-item" ><csv-download  class = "nav-link" input-array="array" filename ="prematricula.csv" label = "Exportar CSV">
+</csv-download></a></li>
 </ul>
 <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -103,6 +104,7 @@
 <!-- Angular JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
     
 <!-- Dependências do BootStrap -->   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
@@ -134,5 +136,8 @@
 <!--Plugins-->
 <script src="app/bower_components/angularjs-social-login/angularjs-social-login.js"></script>
 <script src="app/bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="app/bower_components/csv-download.min.js"></script>
+
+
 </body>
 </html>
