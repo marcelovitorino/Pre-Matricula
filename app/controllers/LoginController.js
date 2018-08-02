@@ -1,8 +1,9 @@
 angular.module('app')
-  .controller('LoginController', function ($rootScope, $location, AuthService, $localStorage,UserService) {
+  .controller('LoginController', function ($rootScope, $location, AuthService, $localStorage, UserService, $http) {
 
     $rootScope.isCCC = $localStorage.isCCC;
     delete $localStorage.isCCC;
+
     if (AuthService.isLogged()) {
       $location.path("/matricula");
     }
@@ -10,18 +11,32 @@ angular.module('app')
     $rootScope.activetab = $location.path();
 
     $rootScope.$on('event:social-sign-in-success', function (event, userDetails) {
-      if (UserService.isRegistered() && !UserService.isCordinator()) {
-        $location.path("/matricula");
-      }
-      else if(!UserService.isRegistered() && !UserService.isCordinator()){
-        $location.path("/signup");
-      }
 
-      else {
-        $location.path("/disciplinascadastradas");
-      }
+      $http.get('http://prematriculabackend.herokuapp.com/api/aluno/' + AuthService.getUserDetails().email).
+        then(function (response) {
+          $rootScope.registered = response.status == 200;
+        }, function () { 
+          $rootScope.registered = false; 
+        })
 
-      $rootScope.$apply();
+        .then(
+          function () {
+            if ($rootScope.registered && !UserService.isCordinator()) {
+              $location.path("/matricula");
+            }
+            else if (!$rootScope.registered && !UserService.isCordinator()) {
+              $location.path("/signup");
+            }
+
+            else {
+              $location.path("/disciplinascadastradas");
+            }
+
+         
+          }
+        );
+
+
 
 
     });

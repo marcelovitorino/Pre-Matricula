@@ -7,7 +7,13 @@ angular.module('app')
 
     $scope.isMatriculaValida = false;
     $scope.numero_creditos = 0;
-    $scope.Disciplines = CourseService.getDisciplines();
+    $scope.Disciplines = [];
+
+    CourseService.getDisciplines().then(function(value){
+       $scope.Disciplines = value;
+    });
+
+
     $scope.Disciplines_Added = CourseService.getDisciplinasMatriculadas();
     $scope.search = "";
     updateCreditos();
@@ -59,6 +65,10 @@ angular.module('app')
 
 
     };
+
+    $scope.getPpc = function(ppc){
+      return CourseService.getTipoInverter(ppc);
+    }
 
 
     $scope.submitMatricula = function(){
