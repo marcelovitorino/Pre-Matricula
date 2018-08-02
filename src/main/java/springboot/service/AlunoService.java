@@ -56,8 +56,8 @@ public class AlunoService {
 		return novoAluno;
 	}
 
-	public Aluno delete(String id) {
-		Optional<Aluno> optAluno = alunoRepository.findById(id);
+	public Aluno delete(String email) {
+		Optional<Aluno> optAluno = alunoRepository.findById(email);
 
 		if (!optAluno.isPresent()) {
 			throw new RegisterNotFoundException("Aluno não está cadastrado.");

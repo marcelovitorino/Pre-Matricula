@@ -44,6 +44,12 @@ public class AlunoController {
 		return new ResponseEntity<Aluno>(updatedAluno, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/aluno/{email}", method = RequestMethod.DELETE)
+	public ResponseEntity<Aluno> delete(@PathVariable("email") String email) {
+		Aluno aluno = alunoService.delete(email);
+		return new ResponseEntity<Aluno>(aluno, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "/aluno/search/{matricula}", method = RequestMethod.GET)
 	public List<Aluno> searchByMatricula(@PathVariable("matricula") String matricula) {
 		return alunoService.pesquisarPorMatricula(matricula);
