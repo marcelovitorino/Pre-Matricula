@@ -1,0 +1,18 @@
+#login{
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#profile{
+    display: block;  
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 2%;
+}
+
+#botao{
+    margin-top: 30px;
+    width: 100px;
+}

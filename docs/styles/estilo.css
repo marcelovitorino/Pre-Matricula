@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+/* Estilo do Index */
+
+
+body {
+    background-color: #F1F1F1;  
+}
+#head{
+  background: #17a2b8!important;
+}
+#head img{
+    padding-top : 15px;
+}
+
+
+

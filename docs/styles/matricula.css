@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+#status-matricula{
+    margin-top: 2%;
+    font-size: 23px;
+}
+
+.nova{
+    margin: 4px 4px 4px 4px;
+    background: lightblue;
+    border-radius: 5px;
+    border: 1px solid  darkslategrey;
+    list-style: none;
+
+}
+
+.nova ul li{
+    list-style: none;
+}
+
+.velha{
+    margin: 4px 4px 4px 4px;
+    background:lightslategray;
+    border-radius: 5px;
+    border: 1px solid lightcyan;
+    list-style: none;
+
+}
+
+.velha ul li{
+    list-style: none;
+}
+
+.ambas{
+    margin: 4px 4px 4px 4px;
+    background:snow;
+    border-radius: 5px;
+    border: 1px solid navajowhite;
+    list-style: none;
+
+}
+
+.ambas ul li{
+    list-style: none;
+}
+
+.nome-titulo{
+    
+    margin-left:3%;
+    margin-top: 2%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+.codigo-titulo{
+    margin-left:3%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+.creditos-titulo{
+    margin-left:3%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+.carga-horaria-titulo{
+    margin-left:3%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+.grade-titulo{
+    margin-left:3%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
+.nome{
+    color:black;
+}
+
+
+.nova button{
+    width: 90%;
+    height: 40px;
+}
+.velha button{
+    width: 90%;
+    height: 40px;
+}
+
+.ambas button{
+    width: 90%;
+    height: 40px;
+}
+
+
+#legenda{
+    font-family: 'Oswald', sans-serif;
+}
+
+.Nova{
+    padding: 4px 4px 4px 4px;
+    background: lightblue;
+
+}
+
+.Antiga{
+    padding: 4px 4px 4px 4px;
+    background: lightslategray;
+}
+
+.Ambas{
+    padding: 4px 4px 4px 4px;
+    background: snow;
+
+}
+
+.disciplina{
+    margin-top: 30px;
+}
