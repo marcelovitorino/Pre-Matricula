@@ -1,5 +1,6 @@
 
-var app = angular.module('app',['ngStorage','ngRoute','socialLogin']);
+var app = angular.module('app',['ngStorage','ngRoute','socialLogin','tld.csvDownload']);
+var host = "";
 
 app.config(function($routeProvider, $locationProvider) {
      // remove o # da url

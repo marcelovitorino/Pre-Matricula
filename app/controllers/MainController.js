@@ -5,10 +5,19 @@ angular.module('app')
 
         $rootScope.isLogged = AuthService.isLogged();
 
+        update_user_type();
+        
+
+
+        function update_user_type(){
+
         if(UserService.isCordinator()) 
             $rootScope.user_type = "cordinator";
         else 
              $rootScope.user_type = "student";
+        }
+
+    
 
      
 

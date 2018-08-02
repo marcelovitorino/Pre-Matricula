@@ -11,7 +11,17 @@ angular.module('app')
     }
 
     service.getDisciplines = function(){
-      return [];
+      return [
+
+        {nome: "PSOFT",
+        codigo: 11,
+        numCreditos: 10,
+        ppc:"Nova"
+      }
+
+
+
+      ];
       
   
 

@@ -1,5 +1,5 @@
 angular.module('app')
-  .factory('UserService', function($localStorage,$rootScope,AuthService) {
+  .factory('UserService', function($localStorage,AuthService) {
    const service = {};
 
   
@@ -8,8 +8,6 @@ angular.module('app')
   }
 
   service.isCordinator = function (){
-
-    return false;
     if (AuthService.getUserDetails() === undefined)
      return false;
    else   
