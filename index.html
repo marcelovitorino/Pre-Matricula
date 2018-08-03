@@ -71,8 +71,7 @@
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" ng-class="{active: activetab == '/addCourse'}"><a class="nav-link" href="/addCourse">Cadastrar Disciplina</a></li>
   <li class="nav-item" ng-class="{active: activetab == '/disciplinascadastradas'}"><a class="nav-link" href="/disciplinascadastradas">Visualizar Disciplinas</a></li>
-  <li class="nav-item" ><csv-download  class = "nav-link" input-array="array" filename ="prematricula.csv" label = "Exportar CSV">
-</csv-download></a></li>
+  <li class="nav-item" ><a class ="nav-link" ng-click="alert()">Exportar Dados</a></li>
 </ul>
 <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
