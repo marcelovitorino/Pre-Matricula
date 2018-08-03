@@ -1,6 +1,6 @@
 package springboot.repository;
 
-import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -16,7 +16,5 @@ import springboot.model.PreMatricula;
 public interface PreMatriculaRepository extends JpaRepository<PreMatricula, Long>{
 	
 	@Query("SELECT a FROM PreMatricula a WHERE LOWER(a.email) LIKE CONCAT('%', LOWER(:email), '%')")
-	public List<PreMatricula> pesquisarPorEmail(@Param("email") String email);
-	
-
+	public Optional<PreMatricula> pesquisarPorEmail(@Param("email") String email);
 }

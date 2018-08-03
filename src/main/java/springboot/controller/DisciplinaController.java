@@ -55,5 +55,4 @@ public class DisciplinaController {
 	public List<Disciplina> searchByName(@PathVariable("disciplina") String disciplina) {
 		return disciplinaService.pesquisarPorNome(disciplina);
 	}
-
 }

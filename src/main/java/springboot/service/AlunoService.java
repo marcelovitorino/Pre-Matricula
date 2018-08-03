@@ -14,6 +14,7 @@ import springboot.repository.AlunoRepository;
 @Service
 public class AlunoService {
 	
+	private final String errorMessage = "Aluno não está cadastrado.";
 	
 	@Autowired
 	private AlunoRepository alunoRepository;
@@ -26,7 +27,7 @@ public class AlunoService {
 		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
-			throw new RegisterNotFoundException("Aluno não está cadastrado.");
+			throw new RegisterNotFoundException(errorMessage);
 		}
 
 		return optAluno.get();
@@ -41,7 +42,7 @@ public class AlunoService {
 		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
-			throw new RegisterNotFoundException("Aluno não está cadastrado.");
+			throw new RegisterNotFoundException(errorMessage);
 		}
 
 		Aluno novoAluno = optAluno.get();
@@ -60,7 +61,7 @@ public class AlunoService {
 		Optional<Aluno> optAluno = alunoRepository.findById(email);
 
 		if (!optAluno.isPresent()) {
-			throw new RegisterNotFoundException("Aluno não está cadastrado.");
+			throw new RegisterNotFoundException(errorMessage);
 		}
 
 		Aluno aluno = optAluno.get();
@@ -69,11 +70,14 @@ public class AlunoService {
 		return aluno;
 	}
 	
-	public List<Aluno> pesquisarPorEmail(String email) {
-		return alunoRepository.pesquisarPorEmail(email);
-	}
-	
-	public List<Aluno> pesquisarPorMatricula(String matricula) {
-		return alunoRepository.pesquisarPorMatricula(matricula);
+	public Aluno pesquisarPorMatricula(String matricula) {
+		
+		Optional<Aluno> optAluno = alunoRepository.findById(matricula);
+
+		if (!optAluno.isPresent()) {
+			throw new RegisterNotFoundException(errorMessage);
+		}
+		
+		return optAluno.get();
 	}
 }
