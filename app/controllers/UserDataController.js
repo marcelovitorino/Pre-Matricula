@@ -6,6 +6,7 @@ angular.module('app')
 
         $rootScope.activetab = $location.path();
         $rootScope.user_email = AuthService.getUserDetails().email;
+        $scope.matricula_usuario = "";
         UserService.getMatricula().then(function (value) {
             $scope.matricula_usuario = value;
         });
