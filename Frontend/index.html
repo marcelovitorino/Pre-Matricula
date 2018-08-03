@@ -22,7 +22,7 @@
 <!-- Aplicação -->
 
 <!-- Head -->
-<div class = "container-fluid" id = "head"><img src = "images/logo-test.png"></div>
+<div class = "container-fluid" id = "head"><img src = "images/smartphone.png" width="35px" height="50px"  title="Oi!Também funciono no celular."> <img src = "images/logo-test.png"></div>
 
 <div ng-switch="user_type">
   <div ng-switch-when = "student">
@@ -35,12 +35,12 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="HeadController">
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" ng-class="{active: activetab == '/matricula'}"><a class="nav-link" href="/matricula">Pré Matricula</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/instructions'}"><a class="nav-link" href="https://docs.google.com/document/d/1xDl6HnSt1t4Xgg-0qtC_ESXOAU1zjFizUQXKrRSaxAM/edit">Instruções</a></li>
+  <li class="nav-item" ng-class="{active: activetab == '/instructions'}"><a class="nav-link" href="https://docs.google.com/document/d/1xDl6HnSt1t4Xgg-0qtC_ESXOAU1zjFizUQXKrRSaxAM/edit" target="_blank">Instruções</a></li>
   
 </ul>
-<div class="nav-item dropdown">
+<div class="nav-item dropdown"> 
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img id = 'profile' ng-src="{{profile_image}}" class="rounded-circle img-fluid" alt="Placeholder image" width="40px" height="40px"></a>
+     <img id = 'profile' ng-src="{{profile_image}}" class="rounded-circle img-fluid" alt="Placeholder image" width="40px" height="40px"></a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <div ng-switch = "isLogged">
          <div ng-switch-when="true">
@@ -71,7 +71,8 @@
   <ul class="navbar-nav mr-auto">
   <li class="nav-item" ng-class="{active: activetab == '/addCourse'}"><a class="nav-link" href="/addCourse">Cadastrar Disciplina</a></li>
   <li class="nav-item" ng-class="{active: activetab == '/disciplinascadastradas'}"><a class="nav-link" href="/disciplinascadastradas">Visualizar Disciplinas</a></li>
-  <li class="nav-item" ng-class="{active: activetab == '/dk'}"><a class="nav-link" href="/disciplinascadastradas">Exportar CSV</a></li>
+  <li class="nav-item" ><csv-download  class = "nav-link" input-array="array" filename ="prematricula.csv" label = "Exportar CSV">
+</csv-download></a></li>
 </ul>
 <div class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -135,7 +136,7 @@
 <!--Plugins-->
 <script src="app/bower_components/angularjs-social-login/angularjs-social-login.js"></script>
 <script src="app/bower_components/ngstorage/ngStorage.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.2/angular-sanitize.min.js"></script>
+<script src="app/bower_components/csv-download.min.js"></script>
 
 
 </body>

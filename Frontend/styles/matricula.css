@@ -5,7 +5,7 @@
     font-size: 23px;
 }
 
-.nova{
+.Nova{
     margin: 4px 4px 4px 4px;
     background: lightblue;
     border-radius: 5px;
@@ -14,11 +14,11 @@
 
 }
 
-.nova ul li{
+.Nova ul li{
     list-style: none;
 }
 
-.velha{
+.Antiga{
     margin: 4px 4px 4px 4px;
     background:lightslategray;
     border-radius: 5px;
@@ -27,11 +27,11 @@
 
 }
 
-.velha ul li{
+.Antiga ul li{
     list-style: none;
 }
 
-.ambas{
+.Ambas{
     margin: 4px 4px 4px 4px;
     background:snow;
     border-radius: 5px;
@@ -40,7 +40,7 @@
 
 }
 
-.ambas ul li{
+.Ambas ul li{
     list-style: none;
 }
 
@@ -77,21 +77,28 @@
     text-align: left;
 }
 
+.tipo-titulo{
+    margin-left:3%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
 .nome{
     color:black;
 }
 
 
-.nova button{
+.Nova button{
     width: 90%;
     height: 40px;
 }
-.velha button{
+.Antiga button{
     width: 90%;
     height: 40px;
 }
 
-.ambas button{
+.Ambas button{
     width: 90%;
     height: 40px;
 }
@@ -101,23 +108,27 @@
     font-family: 'Oswald', sans-serif;
 }
 
-.Nova{
+.nova{
     padding: 4px 4px 4px 4px;
     background: lightblue;
+    
 
 }
 
-.Antiga{
+.antiga{
     padding: 4px 4px 4px 4px;
     background: lightslategray;
+    
 }
 
-.Ambas{
+.ambas{
     padding: 4px 4px 4px 4px;
     background: snow;
+    
 
 }
 
 .disciplina{
     margin-top: 30px;
 }
+
