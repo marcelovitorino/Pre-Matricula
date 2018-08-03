@@ -8,7 +8,7 @@ angular.module('app')
 
     service.getDisciplines = function () {
 
-      $http.get('http://prematriculabackend.herokuapp.com/api/disciplina').
+      $http.get('https://prematriculabackend.herokuapp.com/api/disciplina').
         then(function (response) {
           $rootScope.Disciplines = response.data;
           deferred.resolve(response.data);
@@ -54,7 +54,7 @@ angular.module('app')
 
 
     service.removeDisciplina = function (disciplina) {
-      $http.delete('http://prematriculabackend.herokuapp.com/api/disciplina/' + disciplina.codigo).
+      $http.delete('https://prematriculabackend.herokuapp.com/api/disciplina/' + disciplina.codigo).
         then(function (response) {
           if (response.status == 200) {
             $window.alert("Disciplina Removida com Sucesso!");

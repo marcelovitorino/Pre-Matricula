@@ -1,4 +1,4 @@
-angular.module('app')
+﻿angular.module('app')
   .controller('MatriculaController', function ($scope, $rootScope, $location, UserService, CourseService, $http, $window) {
 
     $rootScope.activetab = $location.path();

@@ -12,7 +12,7 @@ angular.module('app')
 
     $rootScope.$on('event:social-sign-in-success', function (event, userDetails) {
 
-      $http.get('http://prematriculabackend.herokuapp.com/api/aluno/' + AuthService.getUserDetails().email).
+      $http.get('https://prematriculabackend.herokuapp.com/api/aluno/' + AuthService.getUserDetails().email).
         then(function (response) {
           $rootScope.registered = response.status == 200;
         }, function () { 

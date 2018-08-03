@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('SignUpController', function ($rootScope,$scope, $location, UserService, $http) {
+    .controller('SignUpController', function ($rootScope,$scope, $location, UserService, $http,$q) {
         deferred = $q.defer();
 
         $scope.numeroMatricula = "";
@@ -24,7 +24,7 @@ angular.module('app')
                 preMatricula: {}
             };
 
-            $http.post('http://prematriculabackend.herokuapp.com/api/aluno', usuario).
+            $http.post('https://prematriculabackend.herokuapp.com/api/aluno', usuario).
                 then(function (response) {
                     if (response.status == 200) {
                         window.alert("Cadastro efetuado com Sucesso!");

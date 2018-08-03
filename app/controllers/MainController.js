@@ -34,7 +34,7 @@ angular.module('app')
 
             else {
 
-                $http.get('http://prematriculabackend.herokuapp.com/api/aluno/' + AuthService.getUserDetails().email).
+                $http.get('https://prematriculabackend.herokuapp.com/api/aluno/' + AuthService.getUserDetails().email).
                     then(
                         function (response) {
                             $rootScope.status = response.status == 200;

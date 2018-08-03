@@ -17,7 +17,7 @@ angular.module('app')
                     ppc : CourseService.getTipo($scope.cursoEscolhido)
                 };
     
-                $http.post('http://prematriculabackend.herokuapp.com/api/disciplina', disciplina).
+                $http.post('https://prematriculabackend.herokuapp.com/api/disciplina', disciplina).
                     then(function (response) {
                         
                             window.alert("Disciplina adicionada com Sucesso!");
