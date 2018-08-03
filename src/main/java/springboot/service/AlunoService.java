@@ -23,8 +23,8 @@ public class AlunoService {
 		return alunoRepository.findAll();
 	}
 
-	public Aluno getById(String id) {
-		Optional<Aluno> optAluno = alunoRepository.findById(id);
+	public Aluno getById(String email) {
+		Optional<Aluno> optAluno = alunoRepository.findById(email);
 
 		if (!optAluno.isPresent()) {
 			throw new RegisterNotFoundException(errorMessage);
@@ -38,8 +38,8 @@ public class AlunoService {
 		return aluno;
 	}
 
-	public Aluno update(Aluno aluno, String id) {
-		Optional<Aluno> optAluno = alunoRepository.findById(id);
+	public Aluno update(Aluno aluno, String email) {
+		Optional<Aluno> optAluno = alunoRepository.findById(email);
 
 		if (!optAluno.isPresent()) {
 			throw new RegisterNotFoundException(errorMessage);

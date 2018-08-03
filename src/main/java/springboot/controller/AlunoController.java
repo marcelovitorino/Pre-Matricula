@@ -38,9 +38,9 @@ public class AlunoController {
 		return alunoService.getById(email);
 	}
 
-	@RequestMapping(value = "/aluno/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Aluno> update(@PathVariable("id") String id, @RequestBody Aluno aluno) {
-		Aluno updatedAluno = alunoService.update(aluno, id);
+	@RequestMapping(value = "/aluno/{email}", method = RequestMethod.PUT)
+	public ResponseEntity<Aluno> update(@PathVariable("email") String email, @RequestBody Aluno aluno) {
+		Aluno updatedAluno = alunoService.update(aluno, email);
 		return new ResponseEntity<Aluno>(updatedAluno, HttpStatus.OK);
 	}
 	
