@@ -70,6 +70,17 @@ angular.module('app')
 
 
 
+        var alunos = [];
+        var Disciplina = [];
+
+        $http.get('https://prematriculabackend.herokuapp.com/api/aluno').
+        then(function (response) {
+          alunos = response.data;
+         
+        }, function (response) {
+          alunos = [];
+        });
+
 
     }
 
