@@ -50,4 +50,10 @@ public class PreMatriculaController {
 		PreMatricula preMatricula = preMatriculaService.delete(email);
 		return new ResponseEntity<PreMatricula>(preMatricula, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/prematricula/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<PreMatricula> deleteByID(@PathVariable("id") Long id) {
+		PreMatricula preMatricula = preMatriculaService.deleteByID(id);
+		return new ResponseEntity<PreMatricula>(preMatricula, HttpStatus.OK);
+	}
 }

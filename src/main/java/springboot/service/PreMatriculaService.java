@@ -66,4 +66,17 @@ public class PreMatriculaService {
 
 		return preMatricula;
 	}
+	
+	public PreMatricula deleteByID(Long id) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
+
+		if (!optPreMatricula.isPresent()) {
+			throw new RegisterNotFoundException(errorMessage);
+		}
+
+		PreMatricula preMatricula = optPreMatricula.get();
+		preMatriculaRepository.delete(preMatricula);
+
+		return preMatricula;
+	}
 }
