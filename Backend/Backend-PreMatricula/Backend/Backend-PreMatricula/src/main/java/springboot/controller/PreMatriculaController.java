@@ -34,26 +34,21 @@ public class PreMatriculaController {
 	}
 
 	@RequestMapping(value = "/prematricula/{email}", method = RequestMethod.GET)
-	public PreMatricula getByEmail(@PathVariable("email") String email) {
+	public List<PreMatricula> getByCodigo(@PathVariable("email") String email) {
 		return preMatriculaService.getByEmail(email);
 	}
 
-	@RequestMapping(value = "/prematricula/{email}", method = RequestMethod.PUT)
-	public ResponseEntity<PreMatricula> update(@PathVariable("email") String email,
+	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<PreMatricula> update(@PathVariable("id") Long id,
 			@RequestBody PreMatricula preMatricula) {
-		PreMatricula updatedPreMatricula = preMatriculaService.update(preMatricula, email);
+		PreMatricula updatedPreMatricula = preMatriculaService.update(preMatricula, id);
 		return new ResponseEntity<PreMatricula>(updatedPreMatricula, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/prematricula/{email}", method = RequestMethod.DELETE)
-	public ResponseEntity<PreMatricula> delete(@PathVariable("email") String email) {
-		PreMatricula preMatricula = preMatriculaService.delete(email);
+	@RequestMapping(value = "/prematricula/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<PreMatricula> delete(@PathVariable("id") Long id) {
+		PreMatricula preMatricula = preMatriculaService.delete(id);
 		return new ResponseEntity<PreMatricula>(preMatricula, HttpStatus.OK);
 	}
-	
-	@RequestMapping(value = "/prematricula/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<PreMatricula> deleteByID(@PathVariable("id") Long id) {
-		PreMatricula preMatricula = preMatriculaService.deleteByID(id);
-		return new ResponseEntity<PreMatricula>(preMatricula, HttpStatus.OK);
-	}
+
 }

@@ -1,6 +1,6 @@
 package springboot.repository;
 
-import java.util.Optional;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -9,12 +9,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import springboot.model.Aluno;
+import springboot.model.Admin;
 
 @Repository
 @Transactional
-public interface AlunoRepository extends JpaRepository<Aluno, String> {
+public interface AdminRepository extends JpaRepository<Admin, String>{
+	
+	@Query("SELECT a FROM Admin a WHERE LOWER(a.email) LIKE CONCAT('%', LOWER(:email), '%')")
+	public List<Admin> pesquisarPorEmail(@Param("email") String email);
 
-	@Query("SELECT a FROM Aluno a WHERE LOWER(a.matricula) LIKE CONCAT('%', LOWER(:matricula), '%')")
-	public Optional<Aluno> pesquisarPorMatricula(@Param("matricula") String matricula);
 }

@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class HelloWorldController {
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String helloWorld() {
-		return "Hello, World!";
+		return "Hello, World!!!";
 	}
+	
+	//Criar os objetos PreMatricula, Aluno, Disciplina
+	// Listar todos os alunos que querem tal disciplina
+	//Cadastrar adm e remover adm
+	// Delegar as funcoes de PreMatricula, Aluno, Disciplina para os services
 }

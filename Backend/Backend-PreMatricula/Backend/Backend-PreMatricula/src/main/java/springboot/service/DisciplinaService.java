@@ -13,8 +13,6 @@ import springboot.repository.DisciplinaRepository;
 @Service
 public class DisciplinaService {
 	
-	private final String errorMessage = "Disciplina não está cadastrada.";
-	
 	@Autowired
 	private DisciplinaRepository disciplinaRepository;
 
@@ -26,7 +24,7 @@ public class DisciplinaService {
 		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(codigo);
 
 		if (!optDisciplina.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
+			throw new RegisterNotFoundException("Disciplina não está cadastrada.");
 		}
 
 		return optDisciplina.get();
@@ -41,7 +39,7 @@ public class DisciplinaService {
 		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(codigo);
 
 		if (!optDisciplina.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
+			throw new RegisterNotFoundException("Disciplina não está cadastrada.");
 		}
 
 		Disciplina novaDisciplina = optDisciplina.get();
@@ -61,7 +59,7 @@ public class DisciplinaService {
 		Optional<Disciplina> optDisciplina = disciplinaRepository.findById(codigo);
 
 		if (!optDisciplina.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
+			throw new RegisterNotFoundException("Disciplina não está cadastrada.");
 		}
 
 		Disciplina disciplina = optDisciplina.get();
@@ -73,4 +71,5 @@ public class DisciplinaService {
 	public List<Disciplina> pesquisarPorNome(String disciplina) {
 		return disciplinaRepository.pesquisarPorNome(disciplina);
 	}
+
 }

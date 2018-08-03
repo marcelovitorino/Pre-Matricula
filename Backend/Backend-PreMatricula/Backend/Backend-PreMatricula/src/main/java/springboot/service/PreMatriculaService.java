@@ -13,23 +13,20 @@ import springboot.repository.PreMatriculaRepository;
 @Service
 public class PreMatriculaService {
 	
-	private final String errorMessage = "Pré-Matricula não está cadastrada.";
-
 	@Autowired
 	private PreMatriculaRepository preMatriculaRepository;
 
 	public List<PreMatricula> getAll() {
 		return preMatriculaRepository.findAll();
 	}
-	
-	public PreMatricula getByEmail(String email) {
 
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.pesquisarPorEmail(email);
+	public PreMatricula getById(Long id) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
 
 		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
+			throw new RegisterNotFoundException("PreMatricula não está cadastrada.");
 		}
-		
+
 		return optPreMatricula.get();
 	}
 
@@ -38,11 +35,11 @@ public class PreMatriculaService {
 		return preMatricula;
 	}
 
-	public PreMatricula update(PreMatricula preMatricula, String email) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.pesquisarPorEmail(email);
+	public PreMatricula update(PreMatricula preMatricula, Long id) {
+		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
 
 		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
+			throw new RegisterNotFoundException("Pre-matricula não está cadastrada.");
 		}
 
 		PreMatricula novaPreMatricula = optPreMatricula.get();
@@ -54,24 +51,11 @@ public class PreMatriculaService {
 		return novaPreMatricula;
 	}
 
-	public PreMatricula delete(String email) {
-		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.pesquisarPorEmail(email);
-
-		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
-		}
-
-		PreMatricula preMatricula = optPreMatricula.get();
-		preMatriculaRepository.delete(preMatricula);
-
-		return preMatricula;
-	}
-	
-	public PreMatricula deleteByID(Long id) {
+	public PreMatricula delete(Long id) {
 		Optional<PreMatricula> optPreMatricula = preMatriculaRepository.findById(id);
 
 		if (!optPreMatricula.isPresent()) {
-			throw new RegisterNotFoundException(errorMessage);
+			throw new RegisterNotFoundException("Pre-matricula não está cadastrada.");
 		}
 
 		PreMatricula preMatricula = optPreMatricula.get();
@@ -79,4 +63,10 @@ public class PreMatriculaService {
 
 		return preMatricula;
 	}
+
+	public List<PreMatricula> getByEmail(String email) {
+		return preMatriculaRepository.pesquisarPorEmail(email);
+	}
+
+
 }
