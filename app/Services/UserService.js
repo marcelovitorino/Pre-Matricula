@@ -18,6 +18,7 @@ angular.module('app')
 
 
     service.isCordinator = function () {
+      
       if (AuthService.getUserDetails() === undefined)
         return false;
       else
