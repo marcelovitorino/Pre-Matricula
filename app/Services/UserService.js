@@ -24,17 +24,7 @@ angular.module('app')
         return AuthService.getUserDetails().email == "projsw@ccc.ufcg.edu.br";
     }
 
-    service.getMatricula = function () {
-      
-      $http.get('https://prematriculabackend.herokuapp.com/api/aluno/' + AuthService.getUserDetails().email).
-        then(function (response) { 
-        deferred.resolve(response.data.matricula);
-      }).catch(function(error){
-        
-      });
-
-        return deferred.promise;
-    }
+    
 
 
     service.getEmail = function () {
