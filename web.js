@@ -1,17 +1,7 @@
-﻿const express = require('express');
-const http = require('http')
-const path = require('path');
-
-const app = express();
-
-app.use(express.static(path.join(__dirname, 'dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/index.html'));
+﻿var express = require('express');
+var app = express();
+//app.use(express.static(__dirname + '/')); //aqui você define onde está o index.html da sua aplicação.
+app.get('/', function(req, res){
+  res.redirect('/index.html');
 });
-
-const port = process.env.PORT || 3000;
-app.set('port', port);
-
-const server = http.createServer(app);
-server.listen(port, () => console.log('running'));
+app.listen(process.env.PORT || 3000);
