@@ -77,6 +77,13 @@
     text-align: left;
 }
 
+.tipo-titulo{
+    margin-left:3%;
+
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
 .nome{
     color:black;
 }

@@ -5,11 +5,6 @@ angular.module('app')
     deferred = $q.defer();
 
 
-    service.getDisciplinasMatriculadas = function () {
-      return [];
-
-
-    }
 
     service.getDisciplines = function () {
 
@@ -64,9 +59,7 @@ angular.module('app')
           if (response.status == 200) {
             $window.alert("Disciplina Removida com Sucesso!");
             $location.path("/disciplinascadastradas");
-            var index = $rootScope.Disciplines.indexOf(disicipline);
-            $window.alert(index);
-            $rootScope.Disciplines.splice(index, 1);
+      
           }
 
         }, function () {

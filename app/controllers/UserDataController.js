@@ -10,7 +10,7 @@ angular.module('app')
             $scope.matricula_usuario = value;
         });
 
-        $scope.curso = UserService.getCurso();
+ 
 
 
         $scope.send = function send() {
@@ -24,7 +24,7 @@ angular.module('app')
                 preMatricula: {}
             };
 
-            $http.post('http://prematriculabackend.herokuapp.com/api/aluno', usuario).
+            $http.put('http://prematriculabackend.herokuapp.com/api/aluno/' + usuario.email, usuario).
             then(function (response) {
 
                 if (response.status == 200) {

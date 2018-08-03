@@ -21,7 +21,7 @@ angular.module('app')
       if (AuthService.getUserDetails() === undefined)
         return false;
       else
-        return AuthService.getUserDetails().email == "caio.lira@ccc.ufcg.edu.br";
+        return AuthService.getUserDetails().email == "projsw@ccc.ufcg.edu.br";
     }
 
     service.getMatricula = function () {
