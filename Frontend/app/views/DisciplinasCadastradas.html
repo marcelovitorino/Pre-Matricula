@@ -1,12 +1,15 @@
 <div class="page-header">
 
         <div class = "container"> 
-                <input type="text" ng-model = "search" class="form-control badge-light" id="inputText" placeholder="Filtrar"></div>
+            <input type="text" ng-model = "search" class="form-control badge-light" id="inputText" placeholder="Filtrar">
+          
         </div>
+        <div id = "legenda">Legenda Grade: <span class = "nova">Grade Nova</span> <span class = "antiga">Grade Antiga</span> <span class = "ambas">Ambas</span>  </div>
+
 
         
             <div class="container">
-                <div ng-repeat="discipline in disciplinascadastradas | filter: search | orderBy: discipline.nome" class = "disciplina">
+                <div ng-repeat="discipline in Disciplines | filter: search | orderBy: discipline.nome" class = "disciplina">
                     <div ng-class="[discipline.ppc]">
                         <ul>
     
@@ -34,14 +37,21 @@
                             </li>
                             <li>
                                 <h4 class="grade-titulo"><b>Grade:</b>
-                                    <span class="grade"></span>{{discipline.ppc | uppercase}}</span>
+                                    <span class="grade"></span>{{getPpc(discipline.ppc) | uppercase}}</span>
                                 </h4>
                             </li>
+                            <li>
+                                <h4 class="grade-titulo">
+                                    <b>Tipo:</b>
+                                    <span class="tipo"></span>{{discipline.tipo | uppercase}}</span>
+                                </h4>
+                            </li>
+                            
     
                         </ul>
                       
         
-                            <button  type="button" class="btn btn-danger btn-sm" ng-click="removeDiscipline(discipline)">Remover</button>
+                            <button  type="button" class="btn btn-danger btn-sm" ng-click="removeDisciplina(discipline)">Remover</button>
                     
     
     

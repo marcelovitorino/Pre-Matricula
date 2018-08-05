@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('CadastraDisciplinaController',  function($scope, $location,AuthService)
+    .controller('CadastraDisciplinaController',  function($scope, $location,CourseService,$http)
     {
 
         $scope.codigoDisciplina = "";
@@ -7,30 +7,41 @@ angular.module('app')
       
       
             $scope.sendCourse = function() {
+
+                disciplina = {
+                    nome: $scope.nomeDisciplina,
+                    codigo: $scope.codigoDisciplina,
+                    numCreditos:$scope.numCreditos,
+                    cargaHoraria: $scope.cargaHoraria,
+                    tipo: $scope.tipo,
+                    ppc : CourseService.getTipo($scope.cursoEscolhido)
+                };
+    
+                $http.post('https://prematriculabackend.herokuapp.com/api/disciplina', disciplina).
+                    then(function (response) {
+                        
+                            window.alert("Disciplina adicionada com Sucesso!");
+                            $location.path("/disciplinascadastradas");
+                        },
+                        function(){ window.alert("Falha no Cadastro da Disciplina");
+                        $location.path("/addCourse");}
+   
+                    )
               
             }
 
 
         $scope.validaCadastro = function(){
-            return validaNome()&&validaCodigoDisciplina();
+            return validaNome();
 
         }
 
 
        function validaNome() {
-            
-            return (!isEmpty($scope.nomeDisciplina) && isNaN($scope.nomeDisciplina));
+            return isNaN($scope.nomeDisciplina);
         }
 
-       function  validaCodigoDisciplina () {
-            
-            return (!isEmpty($scope.codigoDisciplina));
-        }
+       
 
-
-        function isEmpty(string) {
-            
-            return string === "";
-        }
 
     });
