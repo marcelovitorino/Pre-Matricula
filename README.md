@@ -4,7 +4,7 @@
 # **PRÉ-MATRÍCULA @Computação-UFCG**
 
 ## Sobre
-Projeto para a disciplina de **Projeto de Software** 2017.2
+Projeto para a disciplina de **Projeto de Software** 2018.1
 
 
 ## Detalhes
