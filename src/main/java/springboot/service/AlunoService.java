@@ -23,8 +23,8 @@ public class AlunoService {
 		return alunoRepository.findAll();
 	}
 
-	public Aluno getById(String email) {
-		Optional<Aluno> optAluno = alunoRepository.findById(email);
+	public Aluno getById(String id) {
+		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
 			throw new RegisterNotFoundException(errorMessage);
@@ -38,8 +38,8 @@ public class AlunoService {
 		return aluno;
 	}
 
-	public Aluno update(Aluno aluno, String email) {
-		Optional<Aluno> optAluno = alunoRepository.findById(email);
+	public Aluno update(Aluno aluno, String id) {
+		Optional<Aluno> optAluno = alunoRepository.findById(id);
 
 		if (!optAluno.isPresent()) {
 			throw new RegisterNotFoundException(errorMessage);
@@ -50,7 +50,6 @@ public class AlunoService {
 		novoAluno.setMatricula(aluno.getMatricula());
 		novoAluno.setEmail(aluno.getEmail());
 		novoAluno.setPeriodoEntrada(aluno.getPeriodoEntrada());
-		novoAluno.setPreMatricula(aluno.getPreMatricula());
 
 		alunoRepository.save(novoAluno);
 
