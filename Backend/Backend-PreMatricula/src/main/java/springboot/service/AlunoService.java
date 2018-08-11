@@ -50,7 +50,6 @@ public class AlunoService {
 		novoAluno.setMatricula(aluno.getMatricula());
 		novoAluno.setEmail(aluno.getEmail());
 		novoAluno.setPeriodoEntrada(aluno.getPeriodoEntrada());
-		novoAluno.setPreMatricula(aluno.getPreMatricula());
 
 		alunoRepository.save(novoAluno);
 

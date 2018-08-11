@@ -18,9 +18,8 @@ public class PreMatricula implements Serializable{
  
     private static final long serialVersionUID = -6603382401958426451L;
  
-    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//@Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
  
     public Long getId() {
@@ -56,8 +55,7 @@ public class PreMatricula implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
- 
-    //@OneToOne
+
     @JoinColumn(name = "PremDisciplina")
     public Set<Disciplina> getDisciplina() {
         return disciplinas;
@@ -70,5 +68,4 @@ public class PreMatricula implements Serializable{
     public static long getSerialversionuid() {
         return serialVersionUID;
     }
- 
 }

@@ -5,8 +5,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,9 +26,6 @@ public class Aluno implements Serializable {
 	@Column(nullable = false)
 	private String periodoEntrada;
 	
-	@Column(nullable = true)// mantem essa assinatura?
-	private PreMatricula preMatricula;
-	
 	public Aluno(){
 		
 	}
@@ -41,7 +36,6 @@ public class Aluno implements Serializable {
 		this.nome = nome;
 		this.email = email;
 		this.periodoEntrada = periodoEntrada;
-		this.preMatricula = new PreMatricula();
 	}
 	
 	public String getMatricula(){
@@ -76,21 +70,6 @@ public class Aluno implements Serializable {
 		this.periodoEntrada = periodoEntrada;
 	}
 	
-	
-	//@OneToOne (cascade = CascadeType.ALL)
-	//@JoinTable(name = "aluno_preMatricula", 
-	//joinColumns = @JoinColumn(name = "email_aluno", referencedColumnName = "email"),
-	//inverseJoinColumns = @JoinColumn(name = "preMatricula_id", referencedColumnName = "id"))
-	@OneToOne
-	@JoinColumn(name = "AlunoPreMatricula")
-	public PreMatricula getPreMatricula() {
-		return preMatricula;
-	}
-
-	public void setPreMatricula(PreMatricula preMatricula) {
-		this.preMatricula = preMatricula;
-	}
-	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -98,7 +77,6 @@ public class Aluno implements Serializable {
 	@Override
 	public String toString() {
 		String result = String.format("Nome: %s, email: %s, matricula: %s, periodo de ingresso: %s", nome, email, matricula, periodoEntrada);
-		result += preMatricula.toString();
 		return result;
 	}
 	
