@@ -20,8 +20,7 @@ angular.module('app')
                 matricula: $scope.numeroMatricula,
                 nome:  UserService.getName(),
                 email: UserService.getEmail(),
-                periodoEntrada: "20" + $scope.numeroMatricula.slice(1, 3) + "." + $scope.numeroMatricula.slice(3, 4),
-                preMatricula: {}
+                periodoEntrada: "20" + $scope.numeroMatricula.slice(1, 3) + "." + $scope.numeroMatricula.slice(3, 4)
             };
 
             $http.post('https://prematriculabackend.herokuapp.com/api/aluno', usuario).
