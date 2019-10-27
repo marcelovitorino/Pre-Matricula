@@ -16,7 +16,7 @@ angular.module('app')
     },
 
 
-    service.isLogged = function(){ return $localStorage.UserDetails !== undefined};
+    service.isLogged = () => { return $localStorage.UserDetails };
 
     return service;
   
